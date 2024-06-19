@@ -1,20 +1,17 @@
-{"rest": {
-        "RestGenerator": {
-            "name": "Ollama", 
-            "uri": "http://localhost:11434/api/generate",
-            "method": "post", 
-            "headers": {
-                "X-Authorization": ""
-            }, 
-            "req_template_json_object": {
-                "model": "phi3",
-                "prompt": "$INPUT",
-                "format": "json",
-                "stream": false
-            }, 
-            "response_json": true, 
-            "response_json_field": "response"
-        }
+{"rest.RestGenerator": 
+    {
+        "name": "Ollama", 
+        "uri": "http://localhost:11434/api/generate",
+        "method": "post", 
+        "headers": {
+        }, 
+        "req_template_json_object": {
+            "model": "phi3",
+            "prompt": "$INPUT",
+            "format": "json",
+            "stream": false
+        }, 
+        "response_json": true, 
+        "response_json_field": "response"
     }
 }
-
