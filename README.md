@@ -15,9 +15,9 @@ Repository for OUSPG LLM Hackathon.
 ### Docker Commands:
 
 - Run Docker container and open shell inside of it:
-  '''console
+  ```console
   docker run -it IMAGE sh
-  ''' 
+  ``` 
 
 ### Garak Commands: 
 
