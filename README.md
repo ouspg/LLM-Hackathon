@@ -24,6 +24,9 @@ Repository for OUSPG LLM Hackathon.
 - List available probes:
   ```console
   python3 -m garak --list_probes
+  ```
+  ```console
+  python3 -m garak --list_probes
   ```  
 - Run malware.Evasion probe on GPT-2 model via huggingface:
   ```console
