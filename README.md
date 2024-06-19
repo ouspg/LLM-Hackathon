@@ -8,8 +8,13 @@ Repository for OUSPG LLM Hackathon.
 - Write documentations on how to operate them (with examples).
 - Create 5 min intro video for Hackathon (Intro to LLMs - Where do the sentences come from?)
 
+  **Running a Garak probe in the container taking 10min+ with GPT-2, why?
+
 ## Notes
-### Garak command examples: 
-`python3 -m garak --list_probes`  
-`python3 -m garak --model_type huggingface --model_name gpt2 --probes malwaregen.Evasion`
+
+### Docker Commands:
+Run Docker container and open shell inside of it: `docker run -it IMAGE sh` 
+### Garak Commands: 
+List available probes: `python3 -m garak --list_probes`  
+Run malware.Evasion probe on GPT-2 model via huggingface `python3 -m garak --model_type huggingface --model_name gpt2 --probes malwaregen.Evasion`
 
