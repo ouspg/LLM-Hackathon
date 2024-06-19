@@ -27,8 +27,9 @@ Repository for OUSPG LLM Hackathon.
   ```  
 - Run malware.Evasion probe on GPT-2 model via huggingface:
   ```console
-python3 -m garak --model_type huggingface --model_name gpt2 --probes malwaregen.Evasion
- ```
+ python3 -m garak --model_type huggingface --model_name gpt2 --probes        
+malwaregen.Evasion
+  ```
 
 ### Useful resources:
 
