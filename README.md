@@ -21,3 +21,7 @@ Repository for OUSPG LLM Hackathon.
 - List available probes: `python3 -m garak --list_probes`  
 - Run malware.Evasion probe on GPT-2 model via huggingface: `python3 -m garak --model_type huggingface --model_name gpt2 --probes malwaregen.Evasion`
 
+### Useful resources:
+
+- [Garak ReadMe](https://github.com/leondz/garak?tab=readme-ov-file)
+- [Giskard ReadMe](https://github.com/Giskard-AI/giskard)
