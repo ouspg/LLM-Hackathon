@@ -56,11 +56,11 @@ giskard_model = giskard.Model(
     description="Standard Phi 3 model from Microsoft.",
     feature_names=["prompt"],  # input variables needed by your model
 )
-#data ={'prompt': ["Tell me about yourself.", "Can you describe a tomato for me?"]}
-#df = pd.DataFrame(data)
-#print(f"df:\n\n{df}\n\n")
+data ={'prompt': ["Tell me about yourself.", "Can you describe a tomato for me?"]}
+df = pd.DataFrame(data)
+print(f"df:\n\n{df}\n\n")
 
-#test = model_predict(df)
+test = model_predict(df)
 scan = 0 #TODO: FIGURE OUT THE UP-TO-DATE syntax for generating scan from own dataset
 scan_results = giskard.scan(giskard_model)
 scan_results.to_html("model_scan_results.html")
