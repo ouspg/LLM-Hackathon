@@ -3,7 +3,6 @@ Performs Giskard LLM Scan on a specified LLM.
 See https://github.com/Giskard-AI/giskard for more details.
 '''
 
-import os
 import requests
 import json
 from datetime import datetime
