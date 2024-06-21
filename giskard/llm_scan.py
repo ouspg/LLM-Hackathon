@@ -3,13 +3,16 @@ import requests
 import json
 
 import pandas as pd
-#from openai import OpenAI
 import giskard
-#from giskard.llm.client.openai import OpenAIClient
+
+from openai import OpenAI
+from giskard.llm.client.openai import OpenAIClient
 
 
 # Setup the Ollama client with API key and base URL
-
+_client = OpenAI(base_url="http://localhost:11434/v1/", api_key="ollama")
+oc = OpenAIClient(model="phi3", client=_client)
+giskard.llm.set_default_client(oc)
 
 def model_predict(df: pd.DataFrame):
     '''
@@ -53,14 +56,15 @@ giskard_model = giskard.Model(
     model=model_predict,  # our model function
     model_type="text_generation",
     name="Phi 3",
-    description="Standard Phi 3 model from Microsoft.",
-    feature_names=["prompt"],  # input variables needed by your model
+    description="Standard Phi 3 instruct model from Microsoft.",
+    feature_names=["model", "prompt", "stream"],  # input variables needed by your model
 )
 data ={'prompt': ["Tell me about yourself.", "Can you describe a tomato for me?"]}
 df = pd.DataFrame(data)
+giskard_dataset = giskard.Dataset(df, target=None)
 print(f"df:\n\n{df}\n\n")
 
 test = model_predict(df)
 scan = 0 #TODO: FIGURE OUT THE UP-TO-DATE syntax for generating scan from own dataset
-scan_results = giskard.scan(giskard_model)
+scan_results = giskard.scan(giskard_model, giskard_dataset)
 scan_results.to_html("model_scan_results.html")
