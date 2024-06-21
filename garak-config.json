@@ -7,7 +7,7 @@
         }, 
         "req_template_json_object": {
             "model": "phi3",
-            "prompt": ["$INPUT"],
+            "prompt": "$INPUT",
             "format": "json",
             "stream": false
         }, 
