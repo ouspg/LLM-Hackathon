@@ -7,3 +7,4 @@ RUN apt update && \
     python3 -m pip install -U garak && \
     python3 -m pip install giskard[llm] && \
     curl -fsSL https://ollama.com/install.sh | sh
+COPY giskard/llm_scan.py giskard/llm_scan.py
