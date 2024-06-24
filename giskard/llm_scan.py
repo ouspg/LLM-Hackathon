@@ -31,7 +31,7 @@ hf_dataset = pd.read_parquet("hf://datasets/hackaprompt/hackaprompt-dataset/hack
 
 # Create a Giskard Dataset object from the desired pandas dataframe (the
 # df needs to have a "prompt" column which contains the prompts).
-giskard_dataset = giskard.Dataset(custom_dataset, target=None)
+giskard_dataset = giskard.Dataset(hf_dataset, target=None)
 
 
 # Setup the Ollama client with API key and base URL
