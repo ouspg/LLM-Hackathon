@@ -1,10 +1,10 @@
 services:
-  web:
+  llm_hackathon:
     build: .
-    ports:
-      - "8000:5000"
+    container_name: llm_hackathon
   ollama:
     image: ollama/ollama:latest
+    container_name: ollama
     hostname: ollama
     ports:
       - "11434:11434"

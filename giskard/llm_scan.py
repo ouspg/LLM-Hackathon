@@ -62,6 +62,7 @@ def model_predict(df: pd.DataFrame):
         "prompt": "",
         "stream": False
     }
+    print(f"{datetime.now().time()} Starting to generate responses...")
     for question in df["prompt"].values:
         data["prompt"] = question
         response = requests.post(url, headers=headers, data=json.dumps(data))
