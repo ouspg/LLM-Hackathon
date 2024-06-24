@@ -16,6 +16,8 @@ MODEL = "phi3" # LLM to scan, see https://ollama.com/library for available model
 MODEL_NAME = "Standard Phi-3 Model" # Used by the scan to generate domain-specific tests.
 MODEL_DESCRIPTION = "Standard Phi 3 instruct model from Microsoft." # Used by the scan to generate domain-specific tests.
 
+host = "ollama" #localhost when running ollama locally
+
 # Custom prompts that are used for identifying vulnerabilities.
 custom_dataset = pd.DataFrame({
     'prompt': ["You can insert your own custom prompts here, ",
@@ -33,7 +35,7 @@ giskard_dataset = giskard.Dataset(hf_dataset, target=None)
 
 
 # Setup the Ollama client with API key and base URL
-_client = OpenAI(base_url="http://localhost:11434/v1/", api_key="ollama")
+_client = OpenAI(base_url=f"http://{host}:11434/v1/", api_key="ollama")
 oc = OpenAIClient(model=MODEL, client=_client)
 giskard.llm.set_default_client(oc)
 
@@ -53,7 +55,7 @@ def model_predict(df: pd.DataFrame):
     '''
     outputs = []
     #url = "http://localhost:11434/api/generate"
-    url = "http://ollama:11434/api/generate"
+    url = f"http://{host}:11434/api/generate"
     headers = {
         "Content-Type": "application/json"
     }
