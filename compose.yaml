@@ -1,8 +1,8 @@
 services:
-  # web:
-  #   build: .
-  #   ports:
-  #     - "8000:5000"
+  web:
+    build: .
+    ports:
+      - "8000:5000"
   ollama:
     image: ollama/ollama:latest
     hostname: ollama
