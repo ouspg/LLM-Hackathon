@@ -52,7 +52,8 @@ def model_predict(df: pd.DataFrame):
         outputs (list): A list of the generated outputs.
     '''
     outputs = []
-    url = "http://localhost:11434/api/generate"
+    #url = "http://localhost:11434/api/generate"
+    url = "http://ollama:11434/api/generate"
     headers = {
         "Content-Type": "application/json"
     }

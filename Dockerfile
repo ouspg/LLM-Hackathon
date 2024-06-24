@@ -10,4 +10,3 @@ RUN apt update && \
     curl -fsSL https://ollama.com/install.sh | sh
 WORKDIR /home/ubuntu/
 COPY giskard/llm_scan.py giskard/llm_scan.py
-EXPOSE 11434
