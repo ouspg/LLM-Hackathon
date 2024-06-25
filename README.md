@@ -81,7 +81,7 @@ You can copy the reports to your local host machine and explore the `html` repor
 
 
 
-## TODO: 
+## <p align="center">TODO:</p>
 - Giskard Scan takes 1hr+ (Phi3; No GPU). Is it possible to select only part scan?
    - A lot of the Giskard Scans failed due to "TypeError: list indices must be integers or slices, not str". Any known fixes?
 - Write documentations on how to operate them (with examples).
@@ -89,7 +89,7 @@ You can copy the reports to your local host machine and explore the `html` repor
 
   **Running a Garak probe in the container taking 10min+ with GPT-2, why?
 
-### Useful resources:
+### <p align="center">Useful resources:</p>
 
 - [Garak ReadMe](https://github.com/leondz/garak?tab=readme-ov-file)
 - [Garak Documentation](https://docs.garak.ai/garak)
