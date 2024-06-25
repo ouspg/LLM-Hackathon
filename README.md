@@ -52,13 +52,16 @@ The llm-hackathon container includes [Garak](https://docs.garak.ai/garak) and [G
 
 ### Garak
 
-If you aren't already connected to the `llm_hackathon` container's shell, do so with the command `docker exec -ti llm_hackathon sh`. 
+If you aren't already connected to the **llm_hackathon** container's shell, do so with the command `docker exec -ti llm_hackathon sh`. 
 
-You can now use Garak from via the shell. To list different available Garak probes, type:   
+You can now use [Garak](https://docs.garak.ai/garak) via the shell. To list different available Garak probes [Add illustration here**], type:   
 ```console
   python3 -m garak --list_probes
 ```
-
+You can run the probes on all available models in [Hugging Face Models](https://huggingface.co/models) (some require authentication and more computation power than others). For example, to run `malware.Evasion` probe on OpenAI's `GPT-2`, use the command:
+```console
+  python3 -m garak --model_type huggingface --model_name gpt2 --probes malwaregen.Evasion
+```
 
 
 ## TODO: 
