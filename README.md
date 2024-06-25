@@ -96,7 +96,7 @@ You can copy the reports to your local host machine and explore the `html` repor
 <br>
 <br>
 
-## <p align="center">TODO:</p>
+# <p align="center">TODO:</p>
 - Giskard Scan takes 1hr+ (Phi3; No GPU). Is it possible to select only part scan?
    - A lot of the Giskard Scans failed due to "TypeError: list indices must be integers or slices, not str". Any known fixes?
 - Write documentations on how to operate them (with examples).
