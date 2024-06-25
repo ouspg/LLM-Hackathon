@@ -1,4 +1,4 @@
-# OUSPG LLM Hackathon
+# <p align="center">OUSPG LLM Hackathon Environment</p>
 
 # <p align="center">Quickstart</p>
 
@@ -11,7 +11,7 @@
 
 
 
-## Setup
+## <p align="center">Setup</p>
 
 ### Step 1
 
@@ -36,7 +36,7 @@ If you see [TODO: Add illustration here] `root@2c77651e2bcf:/home/ubuntu#` in yo
 
 
 
-## Usage
+## <p align="center">Usage</p>
 
 The llm-hackathon container includes [Garak](https://docs.garak.ai/garak) and [Giskard](https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html) LLM vulnerability tools.
 
