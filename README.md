@@ -92,7 +92,7 @@ You can copy the reports to your local host machine and explore the `html` repor
 
   **Running a Garak probe in the container taking 10min+ with GPT-2, why?
 
-### Useful resources:
+## <ins>Useful resources:</ins>
 
 [Garak ReadMe](https://github.com/leondz/garak?tab=readme-ov-file)  
 [Garak Documentation](https://docs.garak.ai/garak)  
