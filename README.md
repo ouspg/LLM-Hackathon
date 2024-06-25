@@ -50,7 +50,7 @@
 ```console
   docker container start llm_hackathon
 ```
-- Connect to the container's shell with: 
+- Attach to the container's shell with: 
 ```console
   docker exec -ti llm_hackathon sh
 ```
@@ -66,7 +66,7 @@ The **llm-hackathon** container includes [Garak](https://docs.garak.ai/garak) an
 
 
 ### <ins>Giskard</ins>
-If you aren't already connected to the **llm_hackathon** container's shell, do so with the command `docker exec -ti llm_hackathon sh`. 
+If you aren't already attached to the **llm_hackathon** container's shell, do so with the command `docker exec -ti llm_hackathon sh`. 
 
 - Use command `ls` to make sure there is a directory labeled "giskard" in your current directory.[TODO: Add illustration here**]
 - If there is, you can check the contents of the "giskard" directory with `ls giskard`.
@@ -90,7 +90,7 @@ If you aren't already connected to the **llm_hackathon** container's shell, do s
 
 ### <ins>Garak</ins>
 
-If you aren't already connected to the **llm_hackathon** container's shell, do so with the command:
+If you aren't already attached to the **llm_hackathon** container's shell, do so with the command:
 ```console
   docker exec -ti llm_hackathon sh
 ```
