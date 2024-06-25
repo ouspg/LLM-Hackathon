@@ -35,6 +35,7 @@ If you see [TODO: Add illustration here] `root@2c77651e2bcf:/home/ubuntu#` in yo
 The llm-hackathon container includes [Garak](https://docs.garak.ai/garak) and [Giskard](https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html) LLM vulnerability tools.
 
 ### Giskard
+If you aren't already connected to the **llm_hackathon** container's shell, do so with the command `docker exec -ti llm_hackathon sh`. 
 
 - Use command `ls` to make sure there is a directory labeled "giskard" in your current directory.[TODO: Add illustration here**]
 - If there is, you can check the contents of the "giskard" directory with `ls giskard`.
