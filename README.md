@@ -31,7 +31,7 @@
 
 ### Step 3
 
-- Start the **llm-hackathon** container with: `docker container start llm_hackathon`
+- Make sure the **llm-hackathon** container is running with: `docker container start llm_hackathon`
 - Connect to the container's shell with: `docker exec -ti llm_hackathon sh` 
 
 If you see [TODO: Add illustration here] `root@2c77651e2bcf:/home/ubuntu#` in your terminal - Congratulations! You have succesfully completed the setup part.
