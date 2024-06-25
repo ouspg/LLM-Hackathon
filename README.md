@@ -52,6 +52,12 @@ The llm-hackathon container includes [Garak](https://docs.garak.ai/garak) and [G
 
 ### Garak
 
+If you aren't already connected to the `llm_hackathon` container's shell, do so with the command `docker exec -ti llm_hackathon sh`. 
+
+You can now use Garak from via the shell. To list different available Garak probes, type:   ```console
+  python3 -m garak --list_probes
+  ```
+
 
 
 ## TODO: 
