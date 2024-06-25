@@ -78,7 +78,7 @@ You can run the probes on all available models in [Hugging Face Models](https://
 After garak has ran it's probe(s), it will generate reports into `garak_runs` directory. 
 You can copy the reports to your local host machine and explore the `html` report in browser:
   - Exit the container with command `exit` or by pressing `Ctrl + D`
-  - Run command `docker cp llm_hackathon:/home/ubuntu/garak_runs/ .`
+  - Run command:
   ```console
   docker cp llm_hackathon:/home/ubuntu/garak_runs/ .
 ```
