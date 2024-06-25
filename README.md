@@ -20,7 +20,7 @@
 ### Step 2
 
 - Start the ollama container with `docker container start ollama`
-- Download & run a desired LLM with ollama *(replace `phi3` with the desired LLM tag; available models can be found from https://ollama.com/library)*: `docker exec -it ollama ollama run phi3`
+- Download & run a desired LLM with ollama *(replace `phi3` with the corresponding LLM tag; available models can be found from https://ollama.com/library)*: `docker exec -it ollama ollama run phi3`
 - After downloading the model, you should be [TODO: Add illustration here**] able to chat with the model. Type `/bye` to leave the interactive mode.
 
 ### Step 3
