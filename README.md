@@ -9,6 +9,8 @@
   - On **Linux** you can check ports that are in use with: `lsof -i -P -n | grep LISTEN`
 - ~20Gb of disk space
 
+
+
 ## Setup
 
 ### Step 1
@@ -31,9 +33,13 @@
 
 If you see [TODO: Add illustration here] `root@2c77651e2bcf:/home/ubuntu#` in your terminal - Congratulations! You have succesfully completed the setup part.
 
+
+
+
 ## Usage
 
 The llm-hackathon container includes [Garak](https://docs.garak.ai/garak) and [Giskard](https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html) LLM vulnerability tools.
+
 
 ### Giskard
 If you aren't already connected to the **llm_hackathon** container's shell, do so with the command `docker exec -ti llm_hackathon sh`. 
@@ -71,6 +77,9 @@ You can copy the reports to your local host machine and explore the `html` repor
   - Exit the container with command `exit` or by pressing `Ctrl + D`
   - Run command `docker cp llm_hackathon:/home/ubuntu/garak_runs/ .`
   - Explore the report files. [TODO: Add illustration here**] 
+
+
+
 
 ## TODO: 
 - Giskard Scan takes 1hr+ (Phi3; No GPU). Is it possible to select only part scan?
