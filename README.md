@@ -63,7 +63,10 @@ If you aren't already connected to the **llm_hackathon** container's shell, do s
 
 ### <ins>Garak</ins>
 
-If you aren't already connected to the **llm_hackathon** container's shell, do so with the command `docker exec -ti llm_hackathon sh`. 
+If you aren't already connected to the **llm_hackathon** container's shell, do so with the command:
+```console
+  docker exec -ti llm_hackathon sh
+```
 
 You can now use [Garak](https://docs.garak.ai/garak) via the shell. To list different available Garak probes [Add illustration here**], type:   
 ```console
