@@ -61,7 +61,7 @@ If you aren't already connected to the **llm_hackathon** container's shell, do s
 **Note:** Running the Giskard LLM Scan can take up to an hour or several hours based on the computation power the LLM is being run on and the size on the dataset used to evaluate the LLM. This repository contains an example evaluation report in the giskard directory labeled `giskard/model_scan_results.html` that was produced after running the scan on Phi-3-Mini model using the default custom dataset found in `llm_scan.py`. You can open this `html` file within your browser, and explore what kind of a report the tool would produce after running the whole scan.
   
 
-### Garak
+### <ins>Garak</ins>
 
 If you aren't already connected to the **llm_hackathon** container's shell, do so with the command `docker exec -ti llm_hackathon sh`. 
 
