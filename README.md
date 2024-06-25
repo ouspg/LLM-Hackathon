@@ -20,7 +20,7 @@
 - Clone this repository to your local machine with: `git clone https://github.com/Zippo00/LLM_Hackathon.git`
 - Navigate to the repository with `cd LLM_Hackathon`
 - Build the Docker containers with: `docker compose up`
-- Exit the ollama container with: `Ctrl + C`
+- You may automatically get stuck inside the "ollama" container. Exit it with: `Ctrl + C`
 
 ### Step 2
 
