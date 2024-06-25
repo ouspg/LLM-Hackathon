@@ -45,7 +45,8 @@ The llm-hackathon container includes [Garak](https://docs.garak.ai/garak) and [G
 - You can copy the results file to your local host machine and explore the report in browser:
   - Exit the container with command `exit` or by pressing `Ctrl + D`
   - Run command `docker cp llm_hackathon:/home/ubuntu/giskard_scan_results.html .`
-  - Open the `giskard_scan_results.html` in a browser. [TODO: Add illustration here**]
+  - Open the `giskard_scan_results.html` in a browser. [TODO: Add illustration here**] 
+
 **Note:** Running the Giskard LLM Scan can take up to an hour or several hours based on the computation power the LLM is being run on and the size on the dataset used to evaluate the LLM. This repository contains an example evaluation report in the giskard directory labeled `model_scan_results.html` that was produced after running the scan on Phi-3-Mini model using the default custom dataset found in `llm_scan.py`. You can open this `html` file within your browser, and explore what kind of a report the tool would produce after running the whole scan.
   
 
