@@ -15,21 +15,21 @@
 
 ## <p align="center">Setup</p>
 
-### <ins>Step 1</ins>
+### Step 1
 
 - Clone this repository to your local machine with: `git clone https://github.com/Zippo00/LLM_Hackathon.git`
 - Navigate to the repository with: `cd LLM_Hackathon`
 - Build the Docker containers with: `docker compose up`
 - You may automatically get stuck inside the **ollama** container. Exit it with: `Ctrl + C`
 
-### <ins>Step 2</ins>
+### Step 2
 
 - Make sure the **ollama** container is running with: `docker container start ollama`
 - Download & run Microsoft's Phi-3-Mini model inside the **ollama** container with: `docker exec -it ollama ollama run phi3`
   - *You can use any other LLM from [Ollama Library](https://ollama.com/library) as well. Just replace the `phi3` in the above command with the corresponding LLM tag.*
 - After downloading the model, you should be able to chat with the model [TODO: Add illustration here**]. Type `/bye` to leave the interactive mode.
 
-### <ins>Step 3</ins>
+### Step 3
 
 - Start the **llm-hackathon** container with: `docker container start llm_hackathon`
 - Connect to the container's shell with: `docker exec -ti llm_hackathon sh` 
