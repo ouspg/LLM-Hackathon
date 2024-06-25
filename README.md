@@ -91,8 +91,8 @@ You can copy the reports to your local host machine and explore the `html` repor
 
 ### Useful resources:
 
-- [Garak ReadMe](https://github.com/leondz/garak?tab=readme-ov-file)
-- [Garak Documentation](https://docs.garak.ai/garak)
+[Garak ReadMe](https://github.com/leondz/garak?tab=readme-ov-file)
+[Garak Documentation](https://docs.garak.ai/garak)
   
-- [Giskard ReadMe](https://github.com/Giskard-AI/giskard)
-- [Giskard Documentation](https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html)
+[Giskard ReadMe](https://github.com/Giskard-AI/giskard)
+[Giskard Documentation](https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html)
