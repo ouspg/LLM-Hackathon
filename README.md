@@ -1,6 +1,6 @@
 # OUSPG LLM Hackathon
 
-# Quickstart
+# <p align="center">Quickstart</p>
 
 ## Prerequisites
 
