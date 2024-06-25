@@ -58,13 +58,6 @@ The llm-hackathon container includes [Garak](https://docs.garak.ai/garak) and [G
 
 ## Notes
 
-### Docker Commands:
-
-- Run Docker container and open shell inside of it:
-  ```console
-  docker run -it IMAGE sh
-  ``` 
-
 ### Garak Commands: 
 
 - List available probes:
