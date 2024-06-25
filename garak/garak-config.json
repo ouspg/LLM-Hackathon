@@ -1,7 +1,7 @@
 {"rest.RestGenerator": 
     {
         "name": "Ollama", 
-        "uri": "http://localhost:11434/api/generate",
+        "uri": "http://ollama:11434/api/generate",
         "method": "post", 
         "headers": {
         }, 

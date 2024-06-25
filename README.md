@@ -4,7 +4,7 @@
 
 ## <p align="center">Prerequisites</p>
 
-- Install `Docker` and have it running.
+- Install [Docker](https://docs.docker.com/engine/install/) and have it running.
 - Make sure port **11434** is not in use by any program.
   - On **Linux** you can check ports that are in use with: `lsof -i -P -n | grep LISTEN`
   - On **Windows** you can check ports that are in use with: `netstat -bano`
@@ -18,19 +18,20 @@
 ### Step 1
 
 - Clone this repository to your local machine with: `git clone https://github.com/Zippo00/LLM_Hackathon.git`
+- Navigate to the repository with: `cd LLM_Hackathon`
 - Build the Docker containers with: `docker compose up`
-- Exit the ollama container with: `Ctrl + C`
+- You may automatically get stuck inside the **ollama** container. Exit it with: `Ctrl + C`
 
 ### Step 2
 
-- Start the ollama container with: `docker container start ollama`
-- Download & run Microsoft's Phi-3-Mini model with ollama: `docker exec -it ollama ollama run phi3`
+- Start the **ollama** container with: `docker container start ollama`
+- Download & run Microsoft's Phi-3-Mini model inside the **ollama** container with ollama: `docker exec -it ollama ollama run phi3`
   - *You can use any other LLM from [Ollama Library](https://ollama.com/library) as well. Just replace the `phi3` in the above command with the corresponding LLM tag.*
 - After downloading the model, you should be able to chat with the model [TODO: Add illustration here**]. Type `/bye` to leave the interactive mode.
 
 ### Step 3
 
-- Start the llm-hackathon container with: `docker container start llm_hackathon`
+- Start the **llm-hackathon** container with: `docker container start llm_hackathon`
 - Connect to the container's shell with: `docker exec -ti llm_hackathon sh` 
 
 If you see [TODO: Add illustration here] `root@2c77651e2bcf:/home/ubuntu#` in your terminal - Congratulations! You have succesfully completed the setup part.
@@ -40,7 +41,7 @@ If you see [TODO: Add illustration here] `root@2c77651e2bcf:/home/ubuntu#` in yo
 
 ## <p align="center">Usage</p>
 
-The llm-hackathon container includes [Garak](https://docs.garak.ai/garak) and [Giskard](https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html) LLM vulnerability tools.
+The **llm-hackathon** container includes [Garak](https://docs.garak.ai/garak) and [Giskard](https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html) LLM vulnerability tools.
 
 
 ### Giskard
