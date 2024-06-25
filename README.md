@@ -1,5 +1,19 @@
 # LLM_Hackathon
 Repository for OUSPG LLM Hackathon.
+
+## Quickstart
+
+### Prerequisites
+
+- Install Docker and have it running.
+- Make sure port 11434 is not in use by your local machine.
+  On Linux you can check ports that are in use with: `sudo lsof -i -P -n | grep LISTEN`
+- ~20Gb of disk space
+
+### Step 1
+
+- Clone this repository to your local machine with `git clone `
+
 ## TODO: 
 - Giskard Scan takes 1hr+ (Phi3; No GPU). Is it possible to select only part scan?
    - A lot of the Giskard Scans failed due to "TypeError: list indices must be integers or slices, not str". Any known fixes?
