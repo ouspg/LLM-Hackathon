@@ -21,7 +21,7 @@
 
 - Start the ollama container with `docker container start ollama`
 - Download & run Microsoft's Phi-3-Mini model with ollama: `docker exec -it ollama ollama run phi3`
-  - You can use any other LLM from [Ollama Library](https://ollama.com/library) aswell. Just replace the `phi3` in the above command, aswell as parameter `MODEL` in `llm_scan.py`, with the corresponding LLM tag.
+  - *You can use any other LLM from [Ollama Library](https://ollama.com/library) aswell. Just replace the `phi3` in the above command with the corresponding LLM tag.*
 - After downloading the model, you should be [TODO: Add illustration here**] able to chat with the model. Type `/bye` to leave the interactive mode.
 
 ### Step 3
