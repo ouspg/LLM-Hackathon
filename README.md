@@ -41,7 +41,7 @@ The llm-hackathon container includes [Garak](https://docs.garak.ai/garak) and [G
 - The Python file `llm_scan.py` contains a Python script that runs a Giskard LLM scan on the LLM previously downloaded to the "ollama" container (Default: phi3, you need to change `MODEL` parameter in `llm_scan.py` if you selected a different model).
 - You can define a custom dataset that will be used to evaluate the LLM by altering the `custom dataset` parameter in the `llm_scan.py` file.
 
-Note: Running the Giskard LLM Scan can take up to an hour or several hours based on the computation power the LLM is being run on and the size on the dataset used to evaluate the LLM. This repository contains an example evaluation report in the giskard directory labeled `model_scan_results.html`. You can open this ´html´ file within your browser, and explore what kind of a report the tool would produce after running the whole scan.
+Note: Running the Giskard LLM Scan can take up to an hour or several hours based on the computation power the LLM is being run on and the size on the dataset used to evaluate the LLM. This repository contains an example evaluation report in the giskard directory labeled `model_scan_results.html`. You can open this `html` file within your browser, and explore what kind of a report the tool would produce after running the whole scan.
   
 
 ### Garak
