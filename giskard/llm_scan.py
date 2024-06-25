@@ -12,7 +12,7 @@ import giskard
 from openai import OpenAI
 from giskard.llm.client.openai import OpenAIClient
 
-MODEL = "phi3" # LLM to scan, see https://ollama.com/library for available models.
+MODEL = "phi3" # Tag of the LLM to scan, see https://ollama.com/library for available models.
 MODEL_NAME = "Standard Phi-3 Model" # Used by the scan to generate domain-specific tests.
 MODEL_DESCRIPTION = "Standard Phi 3 instruct model from Microsoft." # Used by the scan to generate domain-specific tests.
 
@@ -54,7 +54,6 @@ def model_predict(df: pd.DataFrame):
         outputs (list): A list of the generated outputs.
     '''
     outputs = []
-    #url = "http://localhost:11434/api/generate"
     url = f"http://{host}:11434/api/generate"
     headers = {
         "Content-Type": "application/json"
