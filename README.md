@@ -4,9 +4,9 @@
 
 ## Prerequisites
 
-- Install Docker and have it running.
-- Make sure port 11434 is not in use by your local machine.
-  - On Linux you can check ports that are in use with: `lsof -i -P -n | grep LISTEN`
+- Install `Docker` and have it running.
+- Make sure port **11434** is not in use by your local machine.
+  - On **Linux** you can check ports that are in use with: `lsof -i -P -n | grep LISTEN`
 - ~20Gb of disk space
 
 ## Setup
