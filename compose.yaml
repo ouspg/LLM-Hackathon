@@ -2,6 +2,8 @@ services:
   llm_hackathon:
     build: .
     container_name: llm_hackathon
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
   ollama:
     image: ollama/ollama:latest
     container_name: ollama
