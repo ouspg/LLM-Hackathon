@@ -22,7 +22,7 @@
 - Start the ollama container with `docker container start ollama`
 - Download & run Microsoft's Phi-3-Mini model with ollama: `docker exec -it ollama ollama run phi3`
   - *You can use any other LLM from [Ollama Library](https://ollama.com/library) as well. Just replace the `phi3` in the above command with the corresponding LLM tag.*
-- After downloading the model, you should be [TODO: Add illustration here**] able to chat with the model. Type `/bye` to leave the interactive mode.
+- After downloading the model, you should be able to chat with the model [TODO: Add illustration here**]. Type `/bye` to leave the interactive mode.
 
 ### Step 3
 
@@ -60,11 +60,17 @@ You can now use [Garak](https://docs.garak.ai/garak) via the shell. To list diff
 ```console
   python3 -m garak --list_probes
 ```
+
 You can run the probes on all available models in [Hugging Face Models](https://huggingface.co/models) (some require authentication and more computation power than others). For example, to run `malwaregen.Evasion` probe on OpenAI's `GPT-2`, use the command:
 ```console
   python3 -m garak --model_type huggingface --model_name gpt2 --probes malwaregen.Evasion
 ```
 
+After garak has ran it's probe(s), it will generate reports into `garak_runs` directory. 
+You can copy the reports to your local host machine and explore the `html` report in browser:
+  - Exit the container with command `exit` or by pressing `Ctrl + D`
+  - Run command `docker cp llm_hackathon:/home/ubuntu/garak_runs/ .`
+  - Explore the report files. [TODO: Add illustration here**] 
 
 ## TODO: 
 - Giskard Scan takes 1hr+ (Phi3; No GPU). Is it possible to select only part scan?
