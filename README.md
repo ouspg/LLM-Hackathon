@@ -2,7 +2,7 @@
 
 # <p align="center">Quickstart</p>
 
-## Prerequisites
+## <p align="center">Prerequisites</p>
 
 - Install `Docker` and have it running.
 - Make sure port **11434** is not in use by your local machine.
