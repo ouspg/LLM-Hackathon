@@ -82,6 +82,13 @@ You can copy the reports to your local host machine and explore the `html` repor
   - Explore the report files. [TODO: Add illustration here**] 
 
 
+## Useful resources:
+
+[Garak ReadMe](https://github.com/leondz/garak?tab=readme-ov-file)  
+[Garak Documentation](https://docs.garak.ai/garak)  
+  
+[Giskard ReadMe](https://github.com/Giskard-AI/giskard)  
+[Giskard Documentation](https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html)  
 
 
 ## <p align="center">TODO:</p>
@@ -91,11 +98,3 @@ You can copy the reports to your local host machine and explore the `html` repor
 - Create 5 min intro video for Hackathon (Intro to LLMs - Where do the sentences come from?)
 
   **Running a Garak probe in the container taking 10min+ with GPT-2, why?
-
-## Useful resources:
-
-[Garak ReadMe](https://github.com/leondz/garak?tab=readme-ov-file)  
-[Garak Documentation](https://docs.garak.ai/garak)  
-  
-[Giskard ReadMe](https://github.com/Giskard-AI/giskard)  
-[Giskard Documentation](https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html)  
