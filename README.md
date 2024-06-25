@@ -28,7 +28,7 @@
 - Start the llm-hackathon container with: `docker container start llm_hackathon`
 - Connect to the container's shell with: `docker exec -ti llm_hackathon sh` 
 
-If you see [TODO: Add illustration here] root@2c77651e2bcf:/home/ubuntu# in your terminal - Congratulations! You have succesfully completed the setup part.
+If you see [TODO: Add illustration here] `root@2c77651e2bcf:/home/ubuntu#` in your terminal - Congratulations! You have succesfully completed the setup part.
 
 ## Usage
 
