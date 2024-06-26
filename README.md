@@ -111,7 +111,7 @@ You can copy the reports to your local host machine and explore the `html` repor
   - Exit the container with command `exit` or by pressing `Ctrl + D`
   - Run command:
   ```console
-  docker cp llm_hackathon:/home/ubuntu/garak_runs/ .
+  docker cp llm_hackathon:/home/ubuntu/garak_runs/ garak_runs
 ```
   - Explore the report files. [TODO: Add illustration here**] 
 
