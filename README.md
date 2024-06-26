@@ -55,7 +55,7 @@
   docker exec -ti llm_hackathon sh
 ```
 
-If you see [TODO: Add illustration here] `root@2c77651e2bcf:/home/ubuntu#` in your terminal - Congratulations! You have succesfully completed the setup part.
+- Type `pwd` and if you see `/home/ubuntu` as the output, as in the image below - Congratulations! You have succesfully completed the setup part.
 
 
 
