@@ -12,16 +12,11 @@ import giskard
 from openai import OpenAI
 from giskard.llm.client.openai import OpenAIClient
 
-# Dependencies for fetching Hugging Face Dataset
-pip_install("fsspec")
-pip_install("pyarrow")
-pip_install("huggingface_hub")
-
 MODEL = "phi3" # Tag of the LLM to scan, see https://ollama.com/library for available models.
 MODEL_NAME = "Standard Phi-3 Model" # Used by the scan to generate domain-specific tests.
 MODEL_DESCRIPTION = "Standard Phi 3 instruct model from Microsoft." # Used by the scan to generate domain-specific tests.
 
-host = "ollama" #localhost when running ollama locally.
+host = "ollama" # localhost when running ollama locally.
 
 # Custom prompts that are used for identifying vulnerabilities.
 custom_dataset = pd.DataFrame({
