@@ -12,6 +12,11 @@ import giskard
 from openai import OpenAI
 from giskard.llm.client.openai import OpenAIClient
 
+# Dependencies for fetching Hugging Face Dataset
+pip_install("fsspec")
+pip_install("pyarrow")
+pip_install("huggingface_hub")
+
 MODEL = "phi3" # Tag of the LLM to scan, see https://ollama.com/library for available models.
 MODEL_NAME = "Standard Phi-3 Model" # Used by the scan to generate domain-specific tests.
 MODEL_DESCRIPTION = "Standard Phi 3 instruct model from Microsoft." # Used by the scan to generate domain-specific tests.
@@ -27,11 +32,12 @@ custom_dataset = pd.DataFrame({
 
 # HuggingFace Dataset for identifying vulnerabilities.
 # You can inspect the dataset here: https://huggingface.co/datasets/hackaprompt/hackaprompt-dataset
-#hf_dataset = pd.read_parquet("hf://datasets/hackaprompt/hackaprompt-dataset/hackaprompt.parquet") #ImportError
+print("Downloading Hugging Face dataset...")
+hf_dataset = pd.read_parquet("hf://datasets/hackaprompt/hackaprompt-dataset/hackaprompt.parquet") #ImportError
 
 # Create a Giskard Dataset object from the desired pandas dataframe (the
 # df needs to have a "prompt" column which contains the prompts).
-giskard_dataset = giskard.Dataset(custom_dataset, target=None)
+giskard_dataset = giskard.Dataset(hf_dataset, target=None)
 
 
 # Setup the Ollama client with API key and base URL
