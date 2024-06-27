@@ -109,7 +109,7 @@ You can run the probes on all available models in [Hugging Face Models](https://
 ```
 
 After garak has ran it's probe(s), it will generate reports into `garak_runs` directory. 
-You can copy the reports to your local host machine and explore the report files. The `html` file contains a summary of the results and the `json` files contain chat logs.:
+You can copy the reports to your local host machine and explore the report files. The `html` file contains a summary of the results and the `json` files contain chat logs:
   - Exit the container with command `exit` or by pressing `Ctrl + D`
   - Run command:
   ```console
