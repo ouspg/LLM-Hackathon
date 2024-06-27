@@ -98,7 +98,7 @@ If you aren't already attached to the **llm_hackathon** container's shell, do so
   docker exec -ti llm_hackathon sh
 ```
 
-You can now use [Garak](https://docs.garak.ai/garak) via the shell. To list different available Garak probes [Add illustration here**], type:   
+You can now use [garak](https://docs.garak.ai/garak) via the shell. To list different available Garak probes [Add illustration here**], type:   
 ```console
   python3 -m garak --list_probes
 ```
