@@ -25,7 +25,7 @@
 ```console
   cd LLM_Hackathon
 ```
-- Build the Docker containers with: 
+- Build the **llm-hackathon** and **ollama** Docker containers with: 
 ```console
   docker compose up
 ```
