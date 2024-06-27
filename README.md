@@ -72,7 +72,7 @@ If you aren't already attached to the **llm_hackathon** container's shell, do so
 
 - Use command `ls` to make sure there is a directory labeled "giskard" in your current directory.[TODO: Add illustration here**]
 - If there is, you can check the contents of the "giskard" directory with `ls giskard`.
-- The Python file `llm_scan.py` contains a Python script that runs a Giskard LLM scan on the LLM previously downloaded to the "ollama" container (Default: phi3, you need to change `MODEL` parameter in `llm_scan.py` if you selected a different model).
+- The Python file `llm_scan.py` contains a Python script that runs a Giskard LLM scan on the LLM previously downloaded to the **ollama** container (Default: phi3, you need to change `MODEL` parameter in `llm_scan.py` if you selected a different model).
 - You can define a custom dataset that will be used to evaluate the LLM by altering the `custom_dataset` parameter in the `llm_scan.py` file.
 - You can start the Giskard LLM Scan with:
 ```console
