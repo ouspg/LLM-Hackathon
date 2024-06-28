@@ -134,7 +134,6 @@ You can copy the reports to your local host machine and explore the report files
 
 # <p align="center">TODO:</p>
 - Giskard Scan takes 1hr+ (Phi3; No GPU). Is it possible to select only part scan?
-   - A lot of the Giskard Scans failed due to "TypeError: list indices must be integers or slices, not str". Any known fixes?
 - Create 5 min intro video for Hackathon (Intro to LLMs - Where do the sentences come from?)
 
   **Running a Garak probe in the container taking 10min+ with GPT-2, why?
