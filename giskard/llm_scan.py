@@ -30,7 +30,7 @@ custom_dataset = pd.DataFrame({
 print("Downloading Hugging Face dataset...")
 hf_dataset = pd.read_parquet("hf://datasets/hackaprompt/hackaprompt-dataset/hackaprompt.parquet")
 # The dataset consists of 600k items, so let´s select only a part of them 
-hf_dataset = pd.concat([hf_dataset.iloc[0:10],hf_dataset.iloc[1000:1010], hf_dataset.iloc[100000:100010], 
+hf_dataset = pd.concat([hf_dataset.iloc[0:10], hf_dataset.iloc[1000:1010], hf_dataset.iloc[100000:100010], 
            hf_dataset.iloc[200000:200010], hf_dataset.iloc[300000:300010], hf_dataset.iloc[400000:400010], 
            hf_dataset.iloc[500000:500010]])
 
