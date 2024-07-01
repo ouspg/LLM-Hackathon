@@ -16,7 +16,9 @@ MODEL = "phi3" # Tag of the LLM to scan, see https://ollama.com/library for avai
 MODEL_NAME = "Standard Phi-3 Model" # Used by the scan to generate domain-specific tests.
 MODEL_DESCRIPTION = "Standard Phi 3 instruct model from Microsoft." # Used by the scan to generate domain-specific tests.
 
-host = "ollama" # localhost when running ollama locally.
+# "localhost" if communicating with the LLM from a local environment.
+# "ollama" if communicating with a containerized LLM from inside a container.
+host = "ollama"
 
 # Custom prompts that are used for identifying vulnerabilities.
 custom_dataset = pd.DataFrame({
