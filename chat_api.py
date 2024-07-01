@@ -28,7 +28,7 @@ def model_predict(df: pd.DataFrame, model="phi3"):
     '''
     if "prompt" not in df:
         raise IndexError('The dataframe needs to have a "prompt" column when using model_predict() to generate responses.')
-
+    outputs = []
     url = f"http://{host}:11434/api/generate"
     headers = {
         "Content-Type": "application/json"
@@ -46,9 +46,10 @@ def model_predict(df: pd.DataFrame, model="phi3"):
         if response.status_code == 200:
             response_text = response.text
             output_data = json.loads(response_text)
-            df["response"].append(output_data["response"])
+            outputs.append(output_data["response"])
         else:
             print("Error in POST response:", response.status_code, response.text)
+    df["response"] = outputs
 
     return df
 
