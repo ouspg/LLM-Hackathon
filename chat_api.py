@@ -10,7 +10,7 @@ from datetime import datetime
 import pandas as pd
 
 
-host = "ollama" # localhost when ollama is not containerized and is running locally.
+host = "localhost" # localhost when ollama is not containerized and is running locally.
 
 def model_predict(df: pd.DataFrame, model="phi3"):
     '''
