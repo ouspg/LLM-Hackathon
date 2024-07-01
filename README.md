@@ -106,7 +106,7 @@ You can now use [garak](https://docs.garak.ai/garak) via the shell. To list diff
 ```console
   python3 -m garak --list_probes
 ```
-You should an output such as in the image below:
+You should see an output such as in the image below:
 
 ![garak probes list](/assets/img/garak_probes.PNG "garak probes list")
 
