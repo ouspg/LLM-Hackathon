@@ -53,10 +53,10 @@ def model_predict(df: pd.DataFrame):
     in the dataframe).
 
     Args:
-        df (pd.DataFrame): Dataframe containing input variables needed to run the desired LLM. Requires a "prompt" column.
+        df (pd.DataFrame):  Dataframe containing input variables needed to run the desired LLM. Requires a "prompt" column.
 
     Returns:
-        outputs (list): A list of the generated outputs.
+        outputs (list):     A list of the generated outputs.
     '''
     outputs = []
     url = f"http://{host}:11434/api/generate"
