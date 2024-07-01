@@ -10,8 +10,6 @@ from datetime import datetime
 import pandas as pd
 
 
-host = "localhost" # localhost when ollama is not containerized and is running locally.
-
 def model_predict(df: pd.DataFrame, model="phi3"):
     '''
     Wraps the LLM call in a simple Python function.
@@ -29,7 +27,7 @@ def model_predict(df: pd.DataFrame, model="phi3"):
     if "prompt" not in df:
         raise IndexError('The dataframe needs to have a "prompt" column when using model_predict() to generate responses.')
     outputs = []
-    url = f"http://{host}:11434/api/generate"
+    url = f"http://localhost:11434/api/generate"
     headers = {
         "Content-Type": "application/json"
     }
