@@ -57,7 +57,7 @@
 
 - Type `pwd` and if you see `/home/ubuntu` as the output, as in the image below - Congratulations! You have succesfully completed the setup part. 
 
-[TODO: Add illustration]
+![setup complete](/assets/img/setup_done.png "`pwd` output")
 
 
 
