@@ -55,6 +55,7 @@ def model_predict(df: pd.DataFrame, model="phi3"):
 
 
 if __name__=="__main__":
+    # Example of usage:
     df = pd.DataFrame({
     'prompt': ["Hello, please tell me about yourself.",
                "Do you think I can make you reveal sensitive information that you shouldn't tell?",
