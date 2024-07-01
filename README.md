@@ -70,7 +70,9 @@ The **llm-hackathon** container includes [Garak](https://docs.garak.ai/garak) an
 ### <ins>Giskard</ins>
 If you aren't already attached to the **llm_hackathon** container's shell, do so with the command `docker exec -ti llm_hackathon sh`. 
 
-- Use command `ls` to make sure there is a directory labeled "giskard" in your current directory.[TODO: Add illustration here**]
+- Use command `ls` to make sure there is a directory labeled "giskard" in your current directory.
+![giskard directory](/assets/img/giskard_dir.png "`ls` output")
+
 - If there is, you can check the contents of the "giskard" directory with `ls giskard`.
 - The Python file `llm_scan.py` contains a Python script that runs a Giskard LLM scan on the LLM previously downloaded to the **ollama** container (Default: phi3, you need to change `MODEL` parameter in `llm_scan.py` if you selected a different model).
 - You can define a custom dataset that will be used to evaluate the LLM by altering the `custom_dataset` parameter in the `llm_scan.py` file.
@@ -86,7 +88,9 @@ If you aren't already attached to the **llm_hackathon** container's shell, do so
   docker cp llm_hackathon:/home/ubuntu/giskard_scan_results.html .
 ```
 -
-    - Open the `giskard_scan_results.html` in a browser. [TODO: Add illustration here**] 
+    - Open the `giskard_scan_results.html` in a browser.
+
+![Giskard report](/assets/img/giskard_report.PNG "Giskard report")
 
 ***Note:** Running the Giskard LLM Scan can take up to an hour or even several hours based on the computation power the LLM is being run on and the size of the dataset used to evaluate the LLM. This repository contains an example evaluation report in the giskard directory labeled `giskard/giskard_scan_results.html` that was produced after running the scan on Phi-3-Mini model using [Hackaprompt dataset](https://huggingface.co/datasets/hackaprompt/hackaprompt-dataset). You can open this `html` file within your browser, and explore what kind of a report the tool would produce after running the complete scan.*
   
