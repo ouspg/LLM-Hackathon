@@ -88,7 +88,7 @@ If you aren't already attached to the **llm_hackathon** container's shell, do so
   docker cp llm_hackathon:/home/ubuntu/giskard_scan_results.html .
 ```
 -
-    - Open the `giskard_scan_results.html` in a browser.
+    - Open the `giskard_scan_results.html` in a browser and you should see a report such as in the image below.
 
 ![Giskard report](/assets/img/giskard_report.PNG "Giskard report")
 
@@ -102,10 +102,13 @@ If you aren't already attached to the **llm_hackathon** container's shell, do so
   docker exec -ti llm_hackathon sh
 ```
 
-You can now use [garak](https://docs.garak.ai/garak) via the shell. To list different available Garak probes [Add illustration here**], type:   
+You can now use [garak](https://docs.garak.ai/garak) via the shell. To list different available Garak probes, type:   
 ```console
   python3 -m garak --list_probes
 ```
+You should an output such as in the image below:
+
+![garak probes list](/assets/img/garak_probes.PNG "garak probes list")
 
 You can run the probes on all available models in [Hugging Face Models](https://huggingface.co/models) (some require authentication and more computation power than others). For example, to run `malwaregen.Evasion` probe on OpenAI's `GPT-2` model, use command:
 ```console
@@ -119,7 +122,9 @@ You can copy the reports to your local host machine and explore the report files
   ```console
   docker cp llm_hackathon:/home/ubuntu/garak_runs/ garak_runs
 ```
-  - Explore the report files. [TODO: Add illustration here**] 
+  - Explore the report files.
+
+![garak report snippet](/assets/img/garak_report.PNG "garak report snippet")
 
 
 ## Useful resources:
