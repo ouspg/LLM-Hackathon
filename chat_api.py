@@ -38,7 +38,7 @@ def model_predict(df: pd.DataFrame, model="phi3"):
         "prompt": "",
         "stream": False 
     }
-    print(f"\n{datetime.now().time().replace(microsecond=0)} Starting to generate responses...")
+    print(f"\n{datetime.now().time().replace(microsecond=0)}: Starting to generate responses...")
     
     for question in df["prompt"].values:
         data["prompt"] = question
