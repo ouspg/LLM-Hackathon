@@ -19,6 +19,8 @@ def model_predict(df: pd.DataFrame, model="phi3"):
 
     Args:
         df (pd.DataFrame):  Dataframe containing a "prompt" column. A response will be generated for each item in the column.
+        
+    Kwargs:
         model (str):        Tag of the LLM used to generate responses, see https://ollama.com/library for available models.
 
     Returns:
