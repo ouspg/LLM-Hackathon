@@ -58,6 +58,9 @@ def model_predict(df: pd.DataFrame):
     Returns:
         outputs (list):     A list of the generated outputs.
     '''
+    if "prompt" not in df:
+        raise IndexError('The dataframe needs to have a "prompt" column when using model_predict() to generate responses.')
+    
     outputs = []
     url = f"http://{host}:11434/api/generate"
     headers = {
