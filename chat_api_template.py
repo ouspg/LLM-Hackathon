@@ -2,7 +2,7 @@
 Template to chat with LLMs via containerized Ollama software.
 
 Follow the "Setup" section in https://github.com/Zippo00/LLM_Hackathon/blob/main/README.md to get a LLM running via Ollama.
-This template can be used to chat with the LLM via REST API.
+This template can be used to generate responses from the LLM via REST API.
 '''
 import requests
 import json
