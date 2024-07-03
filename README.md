@@ -4,7 +4,7 @@
 
 ## <p align="center">Prerequisites</p>
 
-- Install [Docker](https://docs.docker.com/engine/install/) and have it running.
+- Install latest version of [Docker](https://docs.docker.com/engine/install/) and have it running.
 - Make sure port **11434** is not in use by any program.
   - On **Linux** you can check ports that are in use with: `lsof -i -P -n | grep LISTEN`
   - On **Windows** you can check ports that are in use with: `netstat -bano`
