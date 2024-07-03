@@ -14,7 +14,7 @@
 - ~20Gb of disk space.
 
 ### Optional
-- Install and configure (NVIDIA Container Toolkit)[https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html] for GPU accelerated container support.
+- Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) for GPU accelerated container support.
 
 ## <p align="center">Setup</p>
 
