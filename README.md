@@ -98,7 +98,7 @@ If you aren't already attached to the **llm_hackathon** container's shell, do so
 
 ***Note:** Running the Giskard LLM Scan can take up to an hour or even several hours based on the computation power the LLM is being run on and the size of the dataset used to evaluate the LLM. This repository contains an example evaluation report in the giskard directory labeled `giskard/giskard_scan_results.html` that was produced after running the scan on Phi-3-Mini model using [Hackaprompt dataset](https://huggingface.co/datasets/hackaprompt/hackaprompt-dataset). You can open this `html` file within your browser, and explore what kind of a report the tool would produce after running the complete scan.*
   
-
+<br><br>
 ### <ins>Garak</ins>
 
 If you aren't already attached to the **llm_hackathon** container's shell, do so with the command:
@@ -130,6 +130,7 @@ You can copy the reports to your local host machine and explore the report files
 
 ![garak report snippet](/assets/img/garak_report.PNG "garak report snippet")
 
+<br><br>
 ### <ins>Editing files inside container</ins>
 
 The **llm_hackathon** container includes [nano](https://www.nano-editor.org/dist/latest/cheatsheet.html) text editor. You can start editing `llm_scan.py` file with command: 
