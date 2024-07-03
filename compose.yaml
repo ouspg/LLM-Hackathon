@@ -4,6 +4,13 @@ services:
     container_name: llm_hackathon
     stdin_open: true # docker run -i
     tty: true        # docker run -t
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
   ollama:
     image: ollama/ollama:latest
     container_name: ollama
