@@ -129,7 +129,7 @@ You can copy the reports to your local host machine and explore the report files
 
 ![garak report snippet](/assets/img/garak_report.PNG "garak report snippet")
 
-### Editing files inside the **llm_hackathon** container
+### <ins>Editing files inside container</ins>
 
 The **llm_hackathon** container includes [nano](https://www.nano-editor.org/dist/latest/cheatsheet.html) text editor. You can start editing `llm_scan.py` file with command: 
 ```console
