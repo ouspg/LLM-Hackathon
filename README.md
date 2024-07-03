@@ -138,7 +138,7 @@ The **llm_hackathon** container includes [nano](https://www.nano-editor.org/dist
   nano giskard/llm_scan.py
 ```
 
-
+<br><br><br><br><br>
 ## Useful resources:
 
 [Garak ReadMe](https://github.com/leondz/garak?tab=readme-ov-file)  
@@ -147,11 +147,7 @@ The **llm_hackathon** container includes [nano](https://www.nano-editor.org/dist
 [Giskard ReadMe](https://github.com/Giskard-AI/giskard)  
 [Giskard Documentation](https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html)  
 
-<br>
-<br>
-<br>
-<br>
-<br>
+<br><br><br><br><br>
 
 # <p align="center">TODO:</p>
 - Giskard Scan takes 1hr+ (Phi3; No GPU). Is it possible to select only part scan?
