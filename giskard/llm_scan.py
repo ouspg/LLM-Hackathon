@@ -102,9 +102,10 @@ if __name__=="__main__":
     # Perform full Giskard scan
     #scan_results = giskard.scan(giskard_model, giskard_dataset)
     #scan_results.to_html("giskard_scan_results.html")
-
+    
 
     # Perform specific vulnerability scan(s): "performance", "classification", and/or "regression"
-    scanner = Scanner(None, only=['performance'])
-    scan_results = scanner.analyze(giskard_model, dataset=giskard_dataset)
+    scan_results = giskard.scan(giskard_model, giskard_dataset, only=["performance"])
+    #scanner = Scanner(None, only=['performance'])
+    #scan_results = scanner.analyze(giskard_model, dataset=giskard_dataset)
     scan_results.to_html("giskard_scan_results.html")
