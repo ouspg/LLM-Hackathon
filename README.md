@@ -114,9 +114,9 @@ You should see an output such as in the image below:
 
 ![garak probes list](/assets/img/garak_probes.PNG "garak probes list")
 
-You can run the probes on all available models in [Hugging Face Models](https://huggingface.co/models) (some require authentication and more computation power than others). For example, to run `malwaregen.Evasion` probe on OpenAI's `GPT-2` model, use command:
+You can run the probes on all available models in [Hugging Face Models](https://huggingface.co/models) (some require authentication and more computation power than others). For example, to run `malwaregen.Evasion` probe on Microsoft's `Phi-3-Mini` model, use command:
 ```console
-  python3 -m garak --model_type huggingface --model_name gpt2 --probes malwaregen.Evasion
+  python3 -m garak --model_type huggingface.InferenceAPI --model_name microsoft/Phi-3-mini-4k-instruct --probes malwaregen.Evasion
 ```
 
 After garak has ran it's probe(s), it will generate reports into `garak_runs` directory. 
