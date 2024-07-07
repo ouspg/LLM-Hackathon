@@ -150,5 +150,4 @@ The **llm_hackathon** container includes [nano](https://www.nano-editor.org/dist
 <br><br><br><br><br>
 
 # <p align="center">TODO:</p>
-- Giskard Scan takes 1hr+ (Phi3; No GPU). Is it possible to select only part scan?
 - Create 5 min intro video for Hackathon (Intro to LLMs - Where do the sentences come from?)
