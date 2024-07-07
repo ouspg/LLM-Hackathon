@@ -58,7 +58,7 @@
   docker exec -ti llm_hackathon /bin/bash
 ```
 
-- Type `pwd` and if you see `/home/ubuntu` as the output, as in the image below - Congratulations! You have succesfully completed the setup part. 
+- Type `ls` to see contents of current directory and if you see `giskard` as the output, as in the image below - Congratulations! You have succesfully completed the setup part. 
 
 ![setup complete](/assets/img/setup_done.png "`pwd` output")
 
@@ -75,7 +75,7 @@ The **llm-hackathon** container includes [Garak](https://docs.garak.ai/garak) an
 If you aren't already attached to the **llm_hackathon** container's shell, do so with the command `docker exec -ti llm_hackathon /bin/bash`. 
 
 - Use command `ls` to make sure there is a directory labeled "giskard" in your current directory.
-![giskard directory](/assets/img/giskard_dir.png "`ls` output")
+![setup complete](/assets/img/setup_done.png "`pwd` output")
 
 - If there is, you can check the contents of the "giskard" directory with `ls giskard`.
 - The Python file `llm_scan.py` contains a Python script that runs a Giskard LLM scan on the LLM previously downloaded to the **ollama** container (Default: phi3, you need to change `MODEL` parameter in `llm_scan.py` if you selected a different model).
