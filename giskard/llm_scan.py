@@ -11,7 +11,7 @@ import pandas as pd
 import giskard
 from openai import OpenAI
 from giskard.llm.client.openai import OpenAIClient
-from giskard.scanner import Scanner
+
 
 MODEL = "phi3" # Tag of the LLM to scan, see https://ollama.com/library for available models.
 MODEL_NAME = "Standard Phi-3 Model" # Used by the scan to generate domain-specific tests.
@@ -99,13 +99,7 @@ giskard_model = giskard.Model(
 )
 
 if __name__=="__main__":
-    # Perform full Giskard scan
-    #scan_results = giskard.scan(giskard_model, giskard_dataset)
-    #scan_results.to_html("giskard_scan_results.html")
-    
-
-    # Perform specific vulnerability scan(s): "performance", "classification", and/or "regression"
-    scan_results = giskard.scan(giskard_model, giskard_dataset, only=["LLMCharsInjectionDetector"])
-    #scanner = Scanner(None, only=['performance'])
-    #scan_results = scanner.analyze(giskard_model, dataset=giskard_dataset)
+    # Perform Giskard scan
+     #`only` kwarg determines the scope of detectors to scan. Remove it for a full scan.
+    scan_results = giskard.scan(giskard_model, giskard_dataset, only=["llm"])
     scan_results.to_html("giskard_scan_results.html")
