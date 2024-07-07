@@ -55,7 +55,7 @@
 ```
 - Attach to the container's shell with: 
 ```console
-  docker exec -ti llm_hackathon sh
+  docker exec -ti llm_hackathon /bin/bash
 ```
 
 - Type `pwd` and if you see `/home/ubuntu` as the output, as in the image below - Congratulations! You have succesfully completed the setup part. 
@@ -72,7 +72,7 @@ The **llm-hackathon** container includes [Garak](https://docs.garak.ai/garak) an
 
 <br><br>
 ### <ins>Giskard</ins>
-If you aren't already attached to the **llm_hackathon** container's shell, do so with the command `docker exec -ti llm_hackathon sh`. 
+If you aren't already attached to the **llm_hackathon** container's shell, do so with the command `docker exec -ti llm_hackathon /bin/bash`. 
 
 - Use command `ls` to make sure there is a directory labeled "giskard" in your current directory.
 ![giskard directory](/assets/img/giskard_dir.png "`ls` output")
@@ -103,7 +103,7 @@ If you aren't already attached to the **llm_hackathon** container's shell, do so
 
 If you aren't already attached to the **llm_hackathon** container's shell, do so with the command:
 ```console
-  docker exec -ti llm_hackathon sh
+  docker exec -ti llm_hackathon /bin/bash
 ```
 
 You can now use [garak](https://docs.garak.ai/garak) via the shell. To list different available Garak probes, type:   
