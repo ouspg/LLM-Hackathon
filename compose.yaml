@@ -2,30 +2,23 @@ services:
   llm_hackathon:
     build: .
     container_name: llm_hackathon
+    devices:
+      - /dev/kfd
+      - /dev/dri
     stdin_open: true # docker run -i
     tty: true        # docker run -t
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: all
-              capabilities: [gpu]
+
   ollama:
-    image: ollama/ollama:latest
+    image: ollama/ollama:rocm
+    devices:
+      - /dev/kfd
+      - /dev/dri
     container_name: ollama
     hostname: ollama
     ports:
       - "11434:11434"
     volumes:
       - ollama_volume:/root/.ollama
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: all
-              capabilities: [gpu]
 
 
 volumes:
