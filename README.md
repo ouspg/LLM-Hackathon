@@ -31,7 +31,7 @@
 ```console
   cd LLM_Hackathon
 ```
-- *If you are using an **AMD GPU** and wish to utilize its computation in running LLMs, remove lines 1-32 from `compose.yaml` and uncomment lines 38 - 58.*
+*If you are using an **AMD GPU** and wish to utilize its computation in running LLMs, remove lines 1-32 from `compose.yaml` and uncomment lines 38 - 58.*
 - Build the **llm-hackathon** and **ollama** Docker containers with: 
 ```console
   docker compose up
