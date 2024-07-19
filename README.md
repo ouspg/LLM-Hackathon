@@ -160,7 +160,3 @@ The **llm_hackathon** container includes [nano](https://www.nano-editor.org/dist
 [Giskard ReadMe](https://github.com/Giskard-AI/giskard)  
 [Giskard Documentation](https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html)  
 
-<br><br><br><br><br>
-
-# <p align="center">TODO:</p>
-- Create 5 min intro video for Hackathon (Intro to LLMs - Where do the sentences come from?)
