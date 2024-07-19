@@ -118,7 +118,16 @@ You should see an output such as in the image below:
 
 ![garak probes list](/assets/img/garak_probes.PNG "garak probes list")
 
-You can run the probes on all available models in [Hugging Face Models](https://huggingface.co/models) (some require authentication and more computation power than others). For example, to run `malwaregen.Evasion` probe on Microsoft's `Phi-3-Mini` model, use command:
+You can run the probes on all available models in [Hugging Face Models](https://huggingface.co/models) (some require authentication and more computation power than others). 
+
+Hugging Face API has rate limits, so in order to run garak probes on Hugging Face models, we need to set a personal User Access Token as an environment variable. If you don't already have a Hugging Face User Access Token, you can create one [here](https://huggingface.co/settings/tokens) after you have created an account and are logged in to Hugging Face web platform.
+
+Set your personal User Access Token as an environment variable with: 
+```console
+  export HF_INFERENCE_TOKEN=REPLACE_THIS_WITH_YOUR_TOKEN
+```
+
+Now we can for example, run `malwaregen.Evasion` probe on Microsoft's `Phi-3-Mini` model with the command:
 ```console
   python3 -m garak --model_type huggingface.InferenceAPI --model_name microsoft/Phi-3-mini-4k-instruct --probes malwaregen.Evasion
 ```
