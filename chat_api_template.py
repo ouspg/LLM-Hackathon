@@ -36,6 +36,9 @@ def model_predict(df: pd.DataFrame, model="phi3"):
     data = {
         "model": model,
         "prompt": "",
+        "options": {
+            "num_ctx": 2048 # Increase this value to increase the context window size
+        },
         "stream": False 
     }
     print(f"\n{datetime.now().time().replace(microsecond=0)} - Starting to generate responses...")
