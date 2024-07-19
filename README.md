@@ -41,7 +41,7 @@
 ```console
   docker container start ollama
 ```
-- Download & run [Microsoft's Phi-3-Mini](https://ollama.com/library/phi3:mini-4k) model inside the **ollama** container with: 
+- Download & run [Microsoft's Phi-3-Mini](https://ollama.com/library/phi3) model inside the **ollama** container with: 
 ```console
   docker exec -it ollama ollama run phi3
 ```
