@@ -48,11 +48,10 @@ services:
 #       - /dev/dri
 #     container_name: ollama
 #     hostname: ollama
-
-volumes:
-  ollama_volume:
 #     ports:
 #       - "11434:11434"
 #     volumes:
 #       - ollama_volume:/root/.ollama
 
+volumes:
+  ollama_volume:
