@@ -146,7 +146,7 @@ You can copy the reports to your local host machine and explore the report files
 <br><br>
 ### <ins>Editing files inside a container</ins>
 
-The **llm_hackathon** container includes [nano](https://www.nano-editor.org/dist/latest/cheatsheet.html) text editor. You can start editing `llm_scan.py` file with command: 
+The **llm_hackathon** container includes [nano](https://www.nano-editor.org/dist/latest/cheatsheet.html) text editor. You can start editing `llm_scan.py` file while connected to the container's shell with the command: 
 ```console
   nano giskard/llm_scan.py
 ```
