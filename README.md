@@ -127,7 +127,7 @@ Set your personal User Access Token as an environment variable with:
   export HF_INFERENCE_TOKEN=REPLACE_THIS_WITH_YOUR_TOKEN
 ```
 
-Now we can for example, run `malwaregen.Evasion` probe on Microsoft's `Phi-3-Mini` model with the command:
+Now we can, for example, run `malwaregen.Evasion` probe on Microsoft's `Phi-3-Mini` model with the command:
 ```console
   python3 -m garak --model_type huggingface.InferenceAPI --model_name microsoft/Phi-3-mini-4k-instruct --probes malwaregen.Evasion
 ```
