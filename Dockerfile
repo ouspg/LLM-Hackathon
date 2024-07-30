@@ -7,6 +7,8 @@ RUN apt update && \
     apt install nano && \
     apt install unzip -y && \
     apt install curl -y && \
+    apt install git -y && \
+    apt install default-jdk -y && \
     python3 -m pip install -U garak && \
     python3 -m pip install giskard[llm] && \
     python3 -m pip install -U fsspec && \
