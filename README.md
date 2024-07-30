@@ -170,7 +170,7 @@ Garak is a Python project and it contains a `requirements.txt` file, which is a 
 
 *To save 15 minutes of your time when running the first analysis, you need a NVD API key. If you don't already have one, you can request one [here](https://nvd.nist.gov/developers/request-an-api-key) and a link to it will be sent to your email.*
 
-To analyze the repository with DependencyCheck, scan the `requirements.txt` file with the command (if you wish not to use a NVD API Key, remove the `--nvdApiKey REPLACE_THIS_WITH_YOUR_API_KEY` part):
+To analyze the repository with DependencyCheck, scan the `requirements.txt` file with the command *(if you wish not to use a NVD API Key, remove the `--nvdApiKey REPLACE_THIS_WITH_YOUR_API_KEY` part)*:
 ```console
   /home/ubuntu/Dependency-Check/dependency-check/bin/dependency-check.sh \
 --enableExperimental --out . \
