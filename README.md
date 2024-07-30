@@ -185,7 +185,7 @@ DependencyCheck will generate a `html` file of the analysis report, which you ca
   ```console
   docker cp llm_hackathon:/home/ubuntu/dependency-check-report.html .
 ```
-  - Explore the report files.
+  - Explore the report file.
 
 ![DependencyCheck report snippet](/assets/img/dependency-check-report.PNG "DependencyCheck report snippet")
 
