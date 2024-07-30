@@ -5,6 +5,8 @@ RUN apt update && \
     apt install --no-install-recommends -y python3.10 && \
     apt install --no-install-recommends -y pip && \
     apt install nano && \
+    apt install unzip && \
+    apt install curl && \
     python3 -m pip install -U garak && \
     python3 -m pip install giskard[llm] && \
     python3 -m pip install -U fsspec && \
@@ -13,3 +15,10 @@ RUN apt update && \
 
 WORKDIR /home/ubuntu/
 COPY giskard/llm_scan.py giskard/llm_scan.py
+COPY Dependency-Check/dependency-check-example-report.html Dependency-Check/dependency-check-example-report.html
+WORKDIR /home/ubuntu/Dependecy-Check
+RUN VERSION=$(curl -s https://jeremylong.github.io/DependencyCheck/current.txt) && \
+    curl -Ls "https://github.com/jeremylong/DependencyCheck/releases/download/v$VERSION/dependency-check-$VERSION-release.zip" --output dependency-check.zip && \
+    unzip dependency-check.zip && \
+    rm -rf dependency-check.zip
+WORKDIR /home/ubuntu/
