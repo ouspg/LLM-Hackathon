@@ -169,7 +169,10 @@ Llama3 is a Python project and it contains a `requirements.txt` file, which is a
 
 To analyze the repository with DependencyCheck, scan the `requirements.txt` file with the command (if you wish not to use a NVD API Key, remove the `--nvdApiKey REPLACE_THIS_WITH_YOUR_API_KEY` part):
 ```console
-  /home/ubuntu/Dependency-Check/dependency-check/bin/dependency-check.sh --enableExperimental --out . --scan llama3/requirements.txt --nvdApiKey REPLACE_THIS_WITH_YOUR_API_KEY
+  /home/ubuntu/Dependency-Check/dependency-check/bin/dependency-check.sh \
+--enableExperimental --out . \
+--scan llama3/requirements.txt \
+--nvdApiKey REPLACE_THIS_WITH_YOUR_API_KEY
 ```
 
 DependencyCheck will generate a `html` file of the analysis report, which you can copy from the container to your local machine.
