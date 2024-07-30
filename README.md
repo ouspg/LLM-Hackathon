@@ -200,7 +200,7 @@ The **llm_hackathon** container includes [nano](https://www.nano-editor.org/dist
 [Giskard ReadMe](https://github.com/Giskard-AI/giskard)  
 [Giskard Documentation](https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html)  
 
-[DependencyCheck ReadMe](https://github.com/jeremylong/DependencyCheck/blob/main/README.md)
-[DependencyCheck Documentation](https://jeremylong.github.io/DependencyCheck/)
-[DependencyCheck CLI Arguments](https://jeremylong.github.io/DependencyCheck/dependency-check-cli/arguments.html)
-[DependencyCheck Supported File Types](https://jeremylong.github.io/DependencyCheck/analyzers/index.html)
+[DependencyCheck ReadMe](https://github.com/jeremylong/DependencyCheck/blob/main/README.md)  
+[DependencyCheck Documentation](https://jeremylong.github.io/DependencyCheck/)  
+[DependencyCheck CLI Arguments](https://jeremylong.github.io/DependencyCheck/dependency-check-cli/arguments.html)  
+[DependencyCheck Supported File Types](https://jeremylong.github.io/DependencyCheck/analyzers/index.html)  
