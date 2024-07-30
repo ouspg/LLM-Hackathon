@@ -157,13 +157,13 @@ If you aren't already attached to the **llm_hackathon** container's shell, do so
 
 You can use DependencyCheck to scan any repository utilizing [languages](https://jeremylong.github.io/DependencyCheck/analyzers/index.html) supported by the DependencyCheck project. 
 
-Let's analyze Meta's [Llama3 repository](https://github.com/meta-llama/llama3) as an example.
+Let's analyze the tool we just used - [garak](https://github.com/leondz/garak) as an example.
 
 Clone the repository with:
 ```console
-  git clone https://github.com/meta-llama/llama3.git
+  git clone https://github.com/leondz/garak.git
 ```
-Llama3 is a Python project and it contains a `requirements.txt` file, which is a list of required dependencies to run Llama3.
+Garak is a Python project and it contains a `requirements.txt` file, which is a list of required dependencies to run the software.
 
 *To save 15 minutes of your time when running the first analysis, you need a NVD API key. If you don't already have one, you can request one [here](https://nvd.nist.gov/developers/request-an-api-key) and a link to it will be sent to your email.*
 
@@ -171,7 +171,7 @@ To analyze the repository with DependencyCheck, scan the `requirements.txt` file
 ```console
   /home/ubuntu/Dependency-Check/dependency-check/bin/dependency-check.sh \
 --enableExperimental --out . \
---scan llama3/requirements.txt \
+--scan garak/requirements.txt \
 --nvdApiKey REPLACE_THIS_WITH_YOUR_API_KEY
 ```
 
