@@ -5,8 +5,8 @@ RUN apt update && \
     apt install --no-install-recommends -y python3.10 && \
     apt install --no-install-recommends -y pip && \
     apt install nano && \
-    apt install unzip && \
-    apt install curl && \
+    apt install unzip -y && \
+    apt install curl -y && \
     python3 -m pip install -U garak && \
     python3 -m pip install giskard[llm] && \
     python3 -m pip install -U fsspec && \
