@@ -16,7 +16,7 @@ RUN apt update && \
 WORKDIR /home/ubuntu/
 COPY giskard/llm_scan.py giskard/llm_scan.py
 COPY Dependency-Check/dependency-check-example-report.html Dependency-Check/dependency-check-example-report.html
-WORKDIR /home/ubuntu/Dependecy-Check
+WORKDIR /home/ubuntu/Dependency-Check
 RUN VERSION=$(curl -s https://jeremylong.github.io/DependencyCheck/current.txt) && \
     curl -Ls "https://github.com/jeremylong/DependencyCheck/releases/download/v$VERSION/dependency-check-$VERSION-release.zip" --output dependency-check.zip && \
     unzip dependency-check.zip && \
