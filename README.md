@@ -165,7 +165,7 @@ Clone the repository with:
 ```
 Llama3 is a Python project and it contains a `requirements.txt` file, which is a list of required dependencies to run Llama3.
 
-To save 15 minutes of your time when running the first analysis, you need a NVD API key. If you don't already have one, you can request one [here](https://nvd.nist.gov/developers/request-an-api-key) and a link to it will be sent to your email.
+*To save 15 minutes of your time when running the first analysis, you need a NVD API key. If you don't already have one, you can request one [here](https://nvd.nist.gov/developers/request-an-api-key) and a link to it will be sent to your email.*
 
 To analyze the repository with DependencyCheck, scan the `requirements.txt` file with the command (if you wish not to use a NVD API Key, remove the `--nvdApiKey REPLACE_THIS_WITH_YOUR_API_KEY` part):
 ```console
@@ -197,3 +197,7 @@ The **llm_hackathon** container includes [nano](https://www.nano-editor.org/dist
 [Giskard ReadMe](https://github.com/Giskard-AI/giskard)  
 [Giskard Documentation](https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html)  
 
+[DependencyCheck ReadMe](https://github.com/jeremylong/DependencyCheck/blob/main/README.md)
+[DependencyCheck Documentation](https://jeremylong.github.io/DependencyCheck/)
+[DependencyCheck CLI Arguments](https://jeremylong.github.io/DependencyCheck/dependency-check-cli/arguments.html)
+[DependencyCheck Supported File Types](https://jeremylong.github.io/DependencyCheck/analyzers/index.html)
