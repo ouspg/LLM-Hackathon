@@ -156,7 +156,7 @@ If you aren't already attached to the **llm_hackathon** container's shell, do so
 ```console
   docker exec -ti llm_hackathon /bin/bash
 ```
-*Make sure you are in the correct directory. Type `ls` and if the output is `/home/ubuntu` - you are.*
+*Make sure you are in the correct directory. Type `pwd` and if the output is `/home/ubuntu` - you are.*
 
 You can use [DependencyCheck](https://jeremylong.github.io/DependencyCheck/) to scan any repository utilizing [languages](https://jeremylong.github.io/DependencyCheck/analyzers/index.html) supported by the DependencyCheck project. 
 
