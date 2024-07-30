@@ -160,7 +160,7 @@ If you aren't already attached to the **llm_hackathon** container's shell, do so
 
 You can use [DependencyCheck](https://jeremylong.github.io/DependencyCheck/) to scan any repository utilizing [languages](https://jeremylong.github.io/DependencyCheck/analyzers/index.html) supported by the DependencyCheck project. 
 
-Let's analyze the tool we just used - [garak](https://github.com/leondz/garak) as an example.
+Let's analyze the tool we just used, [garak](https://github.com/leondz/garak), as an example.
 
 Clone the repository with:
 ```console
