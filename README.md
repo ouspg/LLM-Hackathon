@@ -3,7 +3,7 @@
 # <p align="center">Introduction</p>
 This repository contains a Docker environment for vulnerability testing Large Language Models (LLMs). The environment contains [Giskard](https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html) and [Garak](https://docs.garak.ai/garak) tools for finding vulnerabilities by prompting a LLM, as well as [DependencyCheck](https://github.com/jeremylong/DependencyCheck/blob/main/README.md) for finding vulnerabilities in projects' dependencies.
 
-<br><br><br><br><br>
+<br><br><br><br>
 
 # <p align="center">Quickstart</p>
 
@@ -22,6 +22,8 @@ This repository contains a Docker environment for vulnerability testing Large La
 - Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) for Docker to allow GPU accelerated container support if you are using a Nvidia GPU.
 - For using **garak** with certain [Hugging Face](https://huggingface.co/) models (Phi-3-Mini for example), you need to create a Hugging Face account [here](https://huggingface.co/join). After you have an account, create and save a Hugging Face User Access Token with "Read" priviliges. You can create one [here](https://huggingface.co/settings/tokens) when you are logged in.
 - To save 15 minutes of time when using DependencyCheck, request a NVD API key [here](https://nvd.nist.gov/developers/request-an-api-key). The link for your personal NVD API key will be sent to your email - save it for later use.
+
+<br><br><br>
 
 ## <p align="center">Setup</p>
 
