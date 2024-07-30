@@ -1,5 +1,8 @@
 # <p align="center">OUSPG LLM Hackathon Environment</p>
 
+## <p align="center">Introduction</p>
+This repository contains a Docker environment for vulnerability testing Large Language Models (LLMs). The environment contains [Giskard](https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html) and [Garak](https://docs.garak.ai/garak) tools for finding vulnerabilities by prompting a LLM, as well as [DependencyCheck](https://github.com/jeremylong/DependencyCheck/blob/main/README.md) for finding vulnerabilities in projects' dependencies.
+
 # <p align="center">Quickstart</p>
 
 ## <p align="center">Prerequisites</p>
@@ -16,7 +19,7 @@
 ### Optional
 - Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) for Docker to allow GPU accelerated container support if you are using a Nvidia GPU.
 - For using **garak** with certain [Hugging Face](https://huggingface.co/) models (Phi-3-Mini for example), you need to create a Hugging Face account [here](https://huggingface.co/join). After you have an account, create and save a Hugging Face User Access Token with "Read" priviliges. You can create one [here](https://huggingface.co/settings/tokens) when you are logged in.
-
+- To save 15 minutes of time when using DependencyCheck, request a NVD API key [here](https://nvd.nist.gov/developers/request-an-api-key). The link for your personal NVD API key will be sent to your email - save it for later use.
 
 
 ## <p align="center">Setup</p>
@@ -72,7 +75,7 @@
 
 ## <p align="center">Usage</p>
 
-The **llm-hackathon** container includes [Garak](https://docs.garak.ai/garak) and [Giskard](https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html) LLM vulnerability tools.
+The **llm-hackathon** container includes [Garak](https://docs.garak.ai/garak) and [Giskard](https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html) LLM vulnerability tools, as well as [DependencyCheck](https://github.com/jeremylong/DependencyCheck/blob/main/README.md).
 
 <br><br>
 ### <ins>Giskard</ins>
@@ -142,6 +145,40 @@ You can copy the reports to your local host machine and explore the report files
   - Explore the report files.
 
 ![garak report snippet](/assets/img/garak_report.PNG "garak report snippet")
+
+<br><br>
+### <ins>DependencyCheck</ins>
+
+If you aren't already attached to the **llm_hackathon** container's shell, do so with the command:
+```console
+  docker exec -ti llm_hackathon /bin/bash
+```
+Make sure you are in the correct directory. Type `ls` and if the output is `/home/ubuntu` - you are.
+
+You can use DependencyCheck to scan any repository utilizing [languages](https://jeremylong.github.io/DependencyCheck/analyzers/index.html) supported by the DependencyCheck project. 
+
+Let's analyze Meta's [Llama3 repository](https://github.com/meta-llama/llama3) as an example.
+
+Clone the repository with:
+```console
+  git clone https://github.com/meta-llama/llama3.git
+```
+Llama3 is a Python project and it contains a `requirements.txt` file, which is a list of required dependencies to run Llama3.
+
+To save 15 minutes of your time when running the first analysis, you need a NVD API key. If you don't already have one, you can request one [here](https://nvd.nist.gov/developers/request-an-api-key) and a link to it will be sent to your email.
+
+To analyze the repository with DependencyCheck, scan the `requirements.txt` file with the command (if you wish not to use a NVD API Key, remove the `--nvdApiKey REPLACE_THIS_WITH_YOUR_API_KEY` part):
+```console
+  /home/ubuntu/Dependency-Check/dependency-check/bin/dependency-check.sh --enableExperimental --out . --scan llama3/requirements.txt --nvdApiKey REPLACE_THIS_WITH_YOUR_API_KEY
+```
+
+DependencyCheck will generate a `html` file of the analysis report, which you can copy from the container to your local machine.
+  - Exit the container with the command `exit` or by pressing `Ctrl + D`.
+  - Run command:
+  ```console
+  docker cp llm_hackathon:/home/ubuntu/dependency-check-report.html .
+```
+  - Explore the report files.
 
 <br><br>
 ### <ins>Editing files inside a container</ins>
