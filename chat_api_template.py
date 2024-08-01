@@ -10,7 +10,7 @@ from datetime import datetime
 import pandas as pd
 
 
-def model_predict(df: pd.DataFrame, model="phi3"):
+def model_predict(df: pd.DataFrame, model="phi3", ctx_size=2048):
     '''
     Wraps the LLM call in a simple Python function.
     The function takes a pandas.DataFrame containing the input variables needed
@@ -22,6 +22,7 @@ def model_predict(df: pd.DataFrame, model="phi3"):
         
     Kwargs:
         model (str):        Tag of the LLM used to generate responses, see https://ollama.com/library for available models.
+        ctx_size (int):     LLM context window size in tokens.
 
     Returns:
         df (pd.DataFrame):  The original dataframe, with a "response" column containing generated responses.
@@ -37,7 +38,7 @@ def model_predict(df: pd.DataFrame, model="phi3"):
         "model": model,
         "prompt": "",
         "options": {
-            "num_ctx": 2048 # Increase this value to increase the context window size
+            "num_ctx": ctx_size
         },
         "stream": False 
     }
