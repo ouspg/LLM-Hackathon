@@ -197,6 +197,13 @@ The **llm_hackathon** container includes [nano](https://www.nano-editor.org/dist
   nano giskard/llm_scan.py
 ```
 
+<br><br>
+### <ins>Using a LLM via REST API</ins>
+After setting up the environment, you can also chat with a downloaded model via REST API. The file `chat_api_template.py` contains a template which can be used for this purpose. 
+
+For more information, please visit: https://github.com/ollama/ollama/blob/main/docs/api.md
+
+
 <br><br><br><br><br>
 ## Useful resources:
 
