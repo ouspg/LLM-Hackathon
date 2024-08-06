@@ -31,7 +31,6 @@ def model_predict(df: pd.DataFrame, model="phi3", ctx_size=2048, url="http://loc
     if "prompt" not in df:
         raise IndexError('The dataframe needs to have a "prompt" column when using model_predict() to generate responses.')
     outputs = []
-    url = url
     headers = {
         "Content-Type": "application/json"
     }
