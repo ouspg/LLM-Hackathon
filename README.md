@@ -17,6 +17,7 @@ This repository contains a Docker environment for vulnerability testing Large La
   - On **Windows** you can check ports that are in use with: `netstat -bano`
   - On **MacOS** `lsof -i -P -n | grep LISTEN` or `netstat -pan` *may* work.
 - ~20Gb of disk space.
+- Running [Phi-3-Mini](https://ollama.com/library/phi3) for giskard tool requires 5.6 GB of RAM.
 
 ### Optional
 - Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) for Docker to allow GPU accelerated container support if you are using a Nvidia GPU.
