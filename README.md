@@ -45,9 +45,9 @@ This repository contains a Docker environment for vulnerability testing Large La
 ```
 *If you get an error response from daemon such as "Error response from daemon: error gathering device information while adding custom device "/dev/kfd": no such file or directory", remove the `- /dev/kfd` lines (lines 39 and 47)  from `compose.yaml` file.* 
 
-*If you get an initialization error such as in the image below, remove the deploy blocks from the `compose.yaml` file (lines 7-13 and 22-28)* 
+*If you get an initialization error such as in the image below, remove the deploy blocks from `compose.yaml` file (lines 7-13 and 22-28).* 
 
-![]()
+![initialization error](assets/img/initialization-error.png "initialization error")
 
 - You may automatically get stuck inside the **ollama** container. Exit it with: `Ctrl + C`
 
@@ -92,7 +92,7 @@ The **llm-hackathon** container includes [Garak](https://docs.garak.ai/garak) an
 If you aren't already attached to the **llm_hackathon** container's shell, do so with the command `docker exec -ti llm_hackathon /bin/bash`. 
 
 - Use command `ls` to make sure there is a directory labeled "giskard" in your current directory.
-![setup complete](/assets/img/setup_done.png "`pwd` output")
+![setup complete](/assets/img/llm_hackathon-container-contents.png "`ls` output")
 
 - If there is, you can check the contents of the "giskard" directory with `ls giskard`.
 - The Python file `llm_scan.py` contains a Python script that runs a Giskard LLM scan on the LLM previously downloaded to the **ollama** container (Default: 'phi3'; You need to change `MODEL` parameter accordingly in `llm_scan.py` file if you selected a different model).
