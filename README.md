@@ -17,6 +17,7 @@ This repository contains a Docker environment for vulnerability testing Large La
   - On **Windows** you can check ports that are in use with: `netstat -bano`
   - On **MacOS** `lsof -i -P -n | grep LISTEN` or `netstat -pan` *may* work.
 - ~20Gb of disk space.
+- Running [Phi-3-Mini](https://ollama.com/library/phi3) for giskard tool requires 5.6 GB of RAM.
 
 ### Optional
 - Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) for Docker to allow GPU accelerated container support if you are using a Nvidia GPU.
@@ -42,7 +43,12 @@ This repository contains a Docker environment for vulnerability testing Large La
 ```console
   docker compose up
 ```
-*If you get an error response from daemon such as "Error response from daemon: error gathering device information while adding custom device "/dev/kfd": no such file or directory", remove the `- /dev/kfd` lines (lines 39 and 47)  from `compose.yaml` file.*
+*If you get an error response from daemon such as "Error response from daemon: error gathering device information while adding custom device "/dev/kfd": no such file or directory", remove the `- /dev/kfd` lines (lines 39 and 47)  from `compose.yaml` file.* 
+
+*If you get an initialization error such as in the image below, remove the deploy blocks from the `compose.yaml` file (lines 7-13 and 22-28)* 
+
+![]()
+
 - You may automatically get stuck inside the **ollama** container. Exit it with: `Ctrl + C`
 
 ### Step 2
@@ -89,7 +95,7 @@ If you aren't already attached to the **llm_hackathon** container's shell, do so
 ![setup complete](/assets/img/setup_done.png "`pwd` output")
 
 - If there is, you can check the contents of the "giskard" directory with `ls giskard`.
-- The Python file `llm_scan.py` contains a Python script that runs a Giskard LLM scan on the LLM previously downloaded to the **ollama** container (Default: 'phi3', you need to change `MODEL` parameter in `llm_scan.py` if you selected a different model).
+- The Python file `llm_scan.py` contains a Python script that runs a Giskard LLM scan on the LLM previously downloaded to the **ollama** container (Default: 'phi3'; You need to change `MODEL` parameter accordingly in `llm_scan.py` file if you selected a different model).
 - You can define a custom dataset that will be used to evaluate the LLM by altering the `custom_dataset` parameter in the `llm_scan.py` file.
 - You can start the Giskard LLM Scan with:
 ```console
