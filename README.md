@@ -42,7 +42,7 @@ This repository contains a Docker environment for vulnerability testing Large La
 ```console
   docker compose up
 ```
-*If you get an error response from daemon such as "Error response from daemon: error gathering device information while adding custom device "/dev/kfd": no such file or directory", remove the `- /dev/kfd` lines (39 and 47)  from `compose.yaml` file.*
+*If you get an error response from daemon such as "Error response from daemon: error gathering device information while adding custom device "/dev/kfd": no such file or directory", remove the `- /dev/kfd` lines (lines 39 and 47)  from `compose.yaml` file.*
 - You may automatically get stuck inside the **ollama** container. Exit it with: `Ctrl + C`
 
 ### Step 2
