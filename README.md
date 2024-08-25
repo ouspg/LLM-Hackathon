@@ -128,6 +128,7 @@ You can copy the reports to your local host machine and explore the report files
 
 ![garak report snippet](/assets/img/garak_report.PNG "garak report snippet")
 
+<br> 
 
 **OBJECTIVE:** Use different probes on the LLM and see what types of vulnerabilities you can find from it (all available probes might not work).
 
@@ -171,6 +172,7 @@ DependencyCheck will generate a `html` file of the analysis report, which you ca
 
 ![DependencyCheck report snippet](/assets/img/dependency-check-report.PNG "DependencyCheck report snippet")
 
+<br> 
 
 **OBJECTIVE:** Find a Github repository of a software project containing [a supported file type](https://jeremylong.github.io/DependencyCheck/analyzers/index.html) by dependency-check, and see if you can find any vulnerable dependencies from the project.
 
@@ -203,10 +205,11 @@ If you aren't already attached to the **llm_hackathon** container's shell, do so
 
 ***Note:** Running the Giskard LLM Scan can take up to an hour or even several hours based on the computation power the LLM is being run on and the size of the dataset used to evaluate the LLM. This repository contains an example evaluation report in the giskard directory labeled `giskard/giskard_scan_results.html` that was produced after running the scan on Phi-3-Mini model using [Hackaprompt dataset](https://huggingface.co/datasets/hackaprompt/hackaprompt-dataset). You can open this `html` file within your browser, and explore what kind of a report the tool would produce after running the complete scan.*
 
+<br> 
+
 **OBJECTIVE:** Try to conduct the Giskard Scan on some other LLM available in the [Ollama library](https://ollama.com/library). You need to download & run the LLM inside the **ollama** container, and change the `MODEL` parameter in `giskard/llm_scan.py` file accordingly (The Giskard Scan might take quite a long time, so it is recommended to do this last).
-
-
 <br><br>
+
 ### <ins>Editing files inside a container</ins>
 
 The **llm_hackathon** container includes [nano](https://www.nano-editor.org/dist/latest/cheatsheet.html) text editor. You can start editing `llm_scan.py` file while connected to the container's shell with the command: 
