@@ -88,34 +88,6 @@ This repository contains a Docker environment for vulnerability testing Large La
 The **llm-hackathon** container includes [Garak](https://docs.garak.ai/garak) and [Giskard](https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html) LLM vulnerability tools, as well as [DependencyCheck](https://github.com/jeremylong/DependencyCheck/blob/main/README.md).
 
 <br><br>
-### <ins>Giskard</ins>
-If you aren't already attached to the **llm_hackathon** container's shell, do so with the command `docker exec -ti llm_hackathon /bin/bash`. 
-
-- Use command `ls` to make sure there is a directory labeled "giskard" in your current directory.
-![setup complete](/assets/img/llm_hackathon-container-contents.png "`ls` output")
-
-- If there is, you can check the contents of the "giskard" directory with `ls giskard`.
-- The Python file `llm_scan.py` contains a Python script that runs a Giskard LLM scan on the LLM previously downloaded to the **ollama** container (Default: 'phi3'; You need to change `MODEL` parameter accordingly in `llm_scan.py` file if you selected a different model).
-- You can define a custom dataset that will be used to evaluate the LLM by altering the `custom_dataset` parameter in the `llm_scan.py` file.
-- You can start the Giskard LLM Scan with:
-```console
-  python3 giskard/llm_scan.py
-```
-- After the scan is complete, the Giskard tool will generate an evaluation report into the current directory labeled `giskard_scan_results.html`.
-- You can copy the results file to your local host machine and explore the report in browser:
-  - Exit the container with command `exit` or by pressing `Ctrl + D`
-  - Run command:
-```console
-  docker cp llm_hackathon:/home/ubuntu/giskard_scan_results.html .
-```
--
-    - Open the `giskard_scan_results.html` in a browser and you should see a report such as in the image below.
-
-![Giskard report](/assets/img/giskard_report.PNG "Giskard report")
-
-***Note:** Running the Giskard LLM Scan can take up to an hour or even several hours based on the computation power the LLM is being run on and the size of the dataset used to evaluate the LLM. This repository contains an example evaluation report in the giskard directory labeled `giskard/giskard_scan_results.html` that was produced after running the scan on Phi-3-Mini model using [Hackaprompt dataset](https://huggingface.co/datasets/hackaprompt/hackaprompt-dataset). You can open this `html` file within your browser, and explore what kind of a report the tool would produce after running the complete scan.*
-  
-<br><br>
 ### <ins>Garak</ins>
 
 If you aren't already attached to the **llm_hackathon** container's shell, do so with the command:
@@ -156,6 +128,9 @@ You can copy the reports to your local host machine and explore the report files
 
 ![garak report snippet](/assets/img/garak_report.PNG "garak report snippet")
 
+
+**OBJECTIVE:** Use different probes on the LLM and see what types of vulnerabilities you can find from it (all available probes might not work).
+
 <br><br>
 ### <ins>DependencyCheck</ins>
 
@@ -195,6 +170,41 @@ DependencyCheck will generate a `html` file of the analysis report, which you ca
   - Explore the report file.
 
 ![DependencyCheck report snippet](/assets/img/dependency-check-report.PNG "DependencyCheck report snippet")
+
+
+**OBJECTIVE:** Find a Github repository of a software project containing [a supported file type](https://jeremylong.github.io/DependencyCheck/analyzers/index.html) by dependency-check, and see if you can find any vulnerable dependencies from the project.
+
+
+<br><br>
+### <ins>Giskard</ins>
+If you aren't already attached to the **llm_hackathon** container's shell, do so with the command `docker exec -ti llm_hackathon /bin/bash`. 
+
+- Use command `ls` to make sure there is a directory labeled "giskard" in your current directory.
+![setup complete](/assets/img/llm_hackathon-container-contents.png "`ls` output")
+
+- If there is, you can check the contents of the "giskard" directory with `ls giskard`.
+- The Python file `llm_scan.py` contains a Python script that runs a Giskard LLM scan on the LLM previously downloaded to the **ollama** container (Default: 'phi3'; You need to change `MODEL` parameter accordingly in `llm_scan.py` file if you selected a different model).
+- You can define a custom dataset that will be used to evaluate the LLM by altering the `custom_dataset` parameter in the `llm_scan.py` file.
+- You can start the Giskard LLM Scan with:
+```console
+  python3 giskard/llm_scan.py
+```
+- After the scan is complete, the Giskard tool will generate an evaluation report into the current directory labeled `giskard_scan_results.html`.
+- You can copy the results file to your local host machine and explore the report in browser:
+  - Exit the container with command `exit` or by pressing `Ctrl + D`
+  - Run command:
+```console
+  docker cp llm_hackathon:/home/ubuntu/giskard_scan_results.html .
+```
+-
+    - Open the `giskard_scan_results.html` in a browser and you should see a report such as in the image below.
+
+![Giskard report](/assets/img/giskard_report.PNG "Giskard report")
+
+***Note:** Running the Giskard LLM Scan can take up to an hour or even several hours based on the computation power the LLM is being run on and the size of the dataset used to evaluate the LLM. This repository contains an example evaluation report in the giskard directory labeled `giskard/giskard_scan_results.html` that was produced after running the scan on Phi-3-Mini model using [Hackaprompt dataset](https://huggingface.co/datasets/hackaprompt/hackaprompt-dataset). You can open this `html` file within your browser, and explore what kind of a report the tool would produce after running the complete scan.*
+
+**OBJECTIVE:** Try to conduct the Giskard Scan on some other LLM available in the [Ollama library](https://ollama.com/library). You need to download & run the LLM inside the **ollama** container, and change the `MODEL` parameter in `giskard/llm_scan.py` file accordingly (The Giskard Scan might take quite a long time, so it is recommended to do this last).
+
 
 <br><br>
 ### <ins>Editing files inside a container</ins>
