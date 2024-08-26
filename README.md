@@ -1,7 +1,9 @@
 # <p align="center">OUSPG LLM Hackathon Environment</p>
 
 # <p align="center">Introduction</p>
-This repository contains a Docker environment for vulnerability testing Large Language Models (LLMs). The environment contains [Giskard](https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html) and [Garak](https://docs.garak.ai/garak) tools for finding vulnerabilities by prompting a LLM, as well as [DependencyCheck](https://github.com/jeremylong/DependencyCheck/blob/main/README.md) for finding vulnerabilities in projects' dependencies.
+This repository contains a Docker environment for vulnerability testing Large Language Models (LLMs). The environment contains [Giskard](https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html) and [Garak](https://docs.garak.ai/garak) tools for finding vulnerabilities by prompting a LLM, as well as [DependencyCheck](https://github.com/jeremylong/DependencyCheck/blob/main/README.md) for finding vulnerabilities in projects' dependencies. 
+
+Following the **Quickstart** guide below will introduce you to each of the tools through examples. The guide contains three **OBJECTIVE**s and by completing all of them, you know you have learned how to utilize the tools for vulnerability testing LLMs. 
 
 <br><br><br>
 
