@@ -2,14 +2,20 @@
 
 ## <p align="center">Table of Contents</p>
 
-<p align="center">
 - [Introduction](#intro)
 - [Quickstart](#quickstart)
   - [Prerequisites](#prereq)
       - [Required](#required)
       - [Optional](#optional)
   - [Setup](#setup)
-</p>
+  - [Usage](#usage)
+      - [Garak](#garak)
+      - [DependencyCheck](#odc)
+      - [Giskard](#giskard)
+  - [Editing files inside a container](#editfile)
+  - [Using a LLM via REST API](#restllm)
+  - [Useful resources](#resource) 
+
 # <p align="center">Introduction</p> <a name="intro"></a>
 This repository contains a Docker environment for vulnerability testing Large Language Models (LLMs). The environment contains [Giskard](https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html) and [Garak](https://docs.garak.ai/garak) tools for finding vulnerabilities by prompting a LLM, as well as [DependencyCheck](https://github.com/jeremylong/DependencyCheck/blob/main/README.md) for finding vulnerabilities in projects' dependencies. 
 
@@ -95,12 +101,12 @@ Following the **Quickstart** guide below will introduce you to each of the tools
 
 <br><br><br>
 
-## <p align="center">Usage</p>
+## <p align="center">Usage</p> <a name="usage"></a>
 
 The **llm-hackathon** container includes [Garak](https://docs.garak.ai/garak) and [Giskard](https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html) LLM vulnerability tools, as well as [DependencyCheck](https://github.com/jeremylong/DependencyCheck/blob/main/README.md).
 
 <br><br>
-### <ins>Garak</ins>
+### <ins>Garak</ins> <a name="garak"></a>
 
 If you aren't already attached to the **llm_hackathon** container's shell, do so with the command:
 ```console
@@ -145,7 +151,7 @@ You can copy the reports to your local host machine and explore the report files
 **OBJECTIVE:** Use different probes on the LLM and see what types of vulnerabilities you can find from it (all available probes might not work).
 
 <br><br>
-### <ins>DependencyCheck</ins>
+### <ins>DependencyCheck</ins> <a name="odc"></a>
 
 If you aren't already attached to the **llm_hackathon** container's shell, do so with the command:
 ```console
@@ -190,7 +196,7 @@ DependencyCheck will generate a `html` file of the analysis report, which you ca
 
 
 <br><br>
-### <ins>Giskard</ins>
+### <ins>Giskard</ins> <a name="giskard"></a>
 If you aren't already attached to the **llm_hackathon** container's shell, do so with the command `docker exec -ti llm_hackathon /bin/bash`. 
 
 - Use command `ls` to make sure there is a directory labeled "giskard" in your current directory.
@@ -222,7 +228,7 @@ If you aren't already attached to the **llm_hackathon** container's shell, do so
 **OBJECTIVE:** Try to conduct the Giskard Scan on some other LLM available in the [Ollama library](https://ollama.com/library). You need to download & run the LLM inside the **ollama** container, and change the `MODEL` parameter in `giskard/llm_scan.py` file accordingly (the Giskard Scan might take quite a long time, so it is recommended to do this last).
 <br><br>
 
-### <ins>Editing files inside a container</ins>
+## <ins>Editing files inside a container</ins> <a name="editfile"></a>
 
 The **llm_hackathon** container includes [nano](https://www.nano-editor.org/dist/latest/cheatsheet.html) text editor. You can start editing `llm_scan.py` file while connected to the container's shell with the command: 
 ```console
@@ -230,14 +236,14 @@ The **llm_hackathon** container includes [nano](https://www.nano-editor.org/dist
 ```
 
 <br><br>
-### <ins>Using a LLM via REST API</ins>
+## <ins>Using a LLM via REST API</ins> <a name="restllm"></a>
 After setting up the environment, you can also generate responses and chat with the model via REST API. The file `chat_api_template.py` contains a template for generating responses to custom prompts. 
 
 For more information, please visit: https://github.com/ollama/ollama/blob/main/docs/api.md
 
 
 <br><br><br><br><br>
-## Useful resources:
+## Useful resources: <a name="resources"></a>
 
 [Garak ReadMe](https://github.com/leondz/garak?tab=readme-ov-file)  
 [Garak Documentation](https://docs.garak.ai/garak)  
