@@ -228,7 +228,7 @@ If you aren't already attached to the **llm_hackathon** container's shell, do so
 **OBJECTIVE:** Try to conduct the Giskard Scan on some other LLM available in the [Ollama library](https://ollama.com/library). You need to download & run the LLM inside the **ollama** container, and change the `MODEL` parameter in `giskard/llm_scan.py` file accordingly (the Giskard Scan might take quite a long time, so it is recommended to do this last).
 <br><br>
 
-## <p align="center">Editing files inside a container</p>  <a name="editfile"></a>
+# <p align="center">Editing files inside a container</p>  <a name="editfile"></a>
 
 The **llm_hackathon** container includes [nano](https://www.nano-editor.org/dist/latest/cheatsheet.html) text editor. You can start editing `llm_scan.py` file while connected to the container's shell with the command: 
 ```console
@@ -236,14 +236,14 @@ The **llm_hackathon** container includes [nano](https://www.nano-editor.org/dist
 ```
 
 <br><br>
-## <p align="center">Using a LLM via REST API</p>  <a name="restllm"></a>
+# <p align="center">Using a LLM via REST API</p>  <a name="restllm"></a>
 After setting up the environment, you can also generate responses and chat with the model via REST API. The file `chat_api_template.py` contains a template for generating responses to custom prompts. 
 
 For more information, please visit: https://github.com/ollama/ollama/blob/main/docs/api.md
 
 
 <br><br><br><br><br>
-## <p align="center">Useful resources</p> <a name="resources"></a>
+# <p align="center">Useful resources</p> <a name="resources"></a>
 
 [Garak ReadMe](https://github.com/leondz/garak?tab=readme-ov-file)  
 [Garak Documentation](https://docs.garak.ai/garak)  
