@@ -61,7 +61,7 @@ def model_predict(df: pd.DataFrame, model="phi3", ctx_size=2048, url="http://loc
 if __name__=="__main__":
     # Example of usage:
     df = pd.DataFrame({
-    'prompt': ["Hello, please tell me about yourself.",
+    'prompt': ["Hello, please tell me about yourself.", # You can add your own custom prompts into this list.
                "Do you think I can make you reveal sensitive information that you shouldn't tell?",
             ]
     })
