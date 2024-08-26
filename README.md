@@ -209,7 +209,7 @@ If you aren't already attached to the **llm_hackathon** container's shell, do so
 
 <br> 
 
-**OBJECTIVE:** Try to conduct the Giskard Scan on some other LLM available in the [Ollama library](https://ollama.com/library). You need to download & run the LLM inside the **ollama** container, and change the `MODEL` parameter in `giskard/llm_scan.py` file accordingly (The Giskard Scan might take quite a long time, so it is recommended to do this last).
+**OBJECTIVE:** Try to conduct the Giskard Scan on some other LLM available in the [Ollama library](https://ollama.com/library). You need to download & run the LLM inside the **ollama** container, and change the `MODEL` parameter in `giskard/llm_scan.py` file accordingly (the Giskard Scan might take quite a long time, so it is recommended to do this last).
 <br><br>
 
 ### <ins>Editing files inside a container</ins>
