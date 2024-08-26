@@ -1,10 +1,14 @@
 # <p align="center">OUSPG LLM Hackathon Environment</p>
 
-# Table of Contents
-[Quickstart](#quickstart)
+## <p align="center">Table of Contents</p>
+- [Introduction](#intro)
+- [Quickstart](#quickstart)
+  - [Prerequisites](#prereq)
+      - [Required](#required)
+      - [Optional](#optional)
+  - [Setup](#setup)
 
-
-# <p align="center">Introduction</p>
+# <p align="center">Introduction</p> <a name="intro"></a>
 This repository contains a Docker environment for vulnerability testing Large Language Models (LLMs). The environment contains [Giskard](https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html) and [Garak](https://docs.garak.ai/garak) tools for finding vulnerabilities by prompting a LLM, as well as [DependencyCheck](https://github.com/jeremylong/DependencyCheck/blob/main/README.md) for finding vulnerabilities in projects' dependencies. 
 
 Following the **Quickstart** guide below will introduce you to each of the tools through examples. The guide contains three **OBJECTIVE**s and by completing all of them, you know you have learned how to utilize the tools for vulnerability testing LLMs. 
@@ -13,9 +17,9 @@ Following the **Quickstart** guide below will introduce you to each of the tools
 
 # <p align="center">Quickstart</p> <a name="quickstart"></a>
 
-## <p align="center">Prerequisites</p>
+## <p align="center">Prerequisites</p> <a name="prereq"></a>
 
-### Required
+### Required <a name="required"></a>
 
 - Install latest version of [Docker](https://docs.docker.com/engine/install/) and have it running.
 - Make sure port **11434** is not in use by any program.
@@ -25,14 +29,14 @@ Following the **Quickstart** guide below will introduce you to each of the tools
 - ~20Gb of disk space.
 -  5.6 GB of RAM for running containerized [Phi-3-Mini](https://ollama.com/library/phi3) for **giskard** tool.
 
-### Optional
+### Optional <a name="optional"></a>
 - Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) for Docker to allow GPU accelerated container support if you are using a Nvidia GPU.
 - For using **garak** with certain [Hugging Face](https://huggingface.co/) models (Phi-3-Mini for example), you need to create a Hugging Face account [here](https://huggingface.co/join). After you have an account, create and save a Hugging Face User Access Token with "Read" priviliges. You can create one [here](https://huggingface.co/settings/tokens) when you are logged in.
 - To save 15 minutes of time when using **DependencyCheck**, request a NVD API key [here](https://nvd.nist.gov/developers/request-an-api-key). The link for your personal NVD API key will be sent to your email - save it for later use.
 
 <br><br><br>
 
-## <p align="center">Setup</p>
+## <p align="center">Setup</p> <a name="setup"></a>
 
 ### Step 1
 
