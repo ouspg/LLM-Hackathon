@@ -12,9 +12,9 @@
       - [Garak](#garak)
       - [DependencyCheck](#odc)
       - [Giskard](#giskard)
-  - [Editing files inside a container](#editfile)
-  - [Using a LLM via REST API](#restllm)
-  - [Useful resources](#resource) 
+- [Editing files inside a container](#editfile)
+- [Using a LLM via REST API](#restllm)
+- [Useful resources](#resource) 
 
 # <p align="center">Introduction</p> <a name="intro"></a>
 This repository contains a Docker environment for vulnerability testing Large Language Models (LLMs). The environment contains [Giskard](https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html) and [Garak](https://docs.garak.ai/garak) tools for finding vulnerabilities by prompting a LLM, as well as [DependencyCheck](https://github.com/jeremylong/DependencyCheck/blob/main/README.md) for finding vulnerabilities in projects' dependencies. 
