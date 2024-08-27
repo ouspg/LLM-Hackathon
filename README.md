@@ -93,9 +93,9 @@ Following the **Quickstart** guide below will introduce you to each of the tools
   docker exec -ti llm_hackathon /bin/bash
 ```
 
-- Type `ls` to see contents of current directory and if you see `giskard` as the output, as in the image below - Congratulations! You have succesfully completed the setup part. 
+- Type `ls` to see contents of current directory and if you see an output as in the image below - Congratulations! You have succesfully completed the setup part. 
 
-![setup complete](/assets/img/setup_done.png "`pwd` output")
+![setup complete](/assets/img/llm_hackathon-container-contents.png "`ls` output")
 
 
 
