@@ -1,5 +1,3 @@
-[Dropbox link](https://www.dropbox.com/scl/fo/6y15skt2yvbdxdommi499/AI1G_s5VbgioamwqjJTqO60?rlkey=g0i2metznviccwe8a4qawv9jo&e=2&st=1zytruwd&dl=0) 
-
 [Feedback Form link](https://255w0sam.forms.app/hackathon-feedback) 
 
 # <p align="center">OUSPG LLM Hackathon Environment</p>
