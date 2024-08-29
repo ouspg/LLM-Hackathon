@@ -1,5 +1,3 @@
-[Feedback Form link](https://255w0sam.forms.app/hackathon-feedback) 
-
 # <p align="center">OUSPG LLM Hackathon Environment</p>
 
 ## <p align="center">Table of Contents</p>
