@@ -59,7 +59,7 @@ Following the **Quickstart** guide below will introduce you to each of the tools
 *If you are using an **AMD GPU** and wish to utilize its computation in running LLMs, remove lines 1-28 from `compose.yaml` and uncomment lines 34 - 54.*
 - Build the **llm-hackathon** and **ollama** Docker containers with: 
 ```console
-  docker compose up
+  docker compose up -d
 ```
 *If you get an error response from daemon such as "Error response from daemon: error gathering device information while adding custom device "/dev/kfd": no such file or directory", remove the `- /dev/kfd` lines (lines 39 and 47)  from `compose.yaml` file.* 
 
