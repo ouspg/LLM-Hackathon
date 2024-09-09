@@ -418,6 +418,8 @@ For more information, please visit: https://github.com/ollama/ollama/blob/main/d
 <br><br><br><br><br>
 # <p align="center">Useful resources</p> <a name="resources"></a>
 
+[Ollama model library](https://ollama.com/library)
+
 [Garak ReadMe](https://github.com/leondz/garak?tab=readme-ov-file)  
 [Garak Documentation](https://docs.garak.ai/garak)  
   
