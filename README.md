@@ -308,7 +308,7 @@ Now we can, for example, run `malwaregen.Evasion` probe on Microsoft's `Phi-3-Mi
   python3 -m garak --model_type huggingface.InferenceAPI --model_name microsoft/Phi-3-mini-4k-instruct --probes malwaregen.Evasion
 ```
 
-After garak has ran it's probe(s), it will generate reports into `garak_runs` directory. 
+After garak has ran its probe(s), it will generate reports into `garak_runs` directory. 
 You can copy the reports to your local host machine and explore the report files. The `html` file contains a summary of the results and the `json` files contain chat logs:
   - Exit the container with command `exit` or by pressing `Ctrl + D`
   - Run command:
