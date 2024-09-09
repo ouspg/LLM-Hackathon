@@ -1,13 +1,33 @@
 # <p align="center">OUSPG LLM Hackathon Environment</p>
 
-# <p align="center">Introduction</p>
-This repository contains a Docker environment for vulnerability testing Large Language Models (LLMs). The environment contains [Giskard](https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html) and [Garak](https://docs.garak.ai/garak) tools for finding vulnerabilities by prompting a LLM, as well as [DependencyCheck](https://github.com/jeremylong/DependencyCheck/blob/main/README.md) for finding vulnerabilities in projects' dependencies.
+## <p align="center">Table of Contents</p>
 
-# <p align="center">Quickstart</p>
+- [Introduction](#intro)
+- [Quickstart](#quickstart)
+  - [Prerequisites](#prereq)
+      - [Required](#required)
+      - [Optional](#optional)
+  - [Setup](#setup)
+  - [Usage](#usage)
+      - [Garak](#garak)
+      - [DependencyCheck](#odc)
+      - [Giskard](#giskard)
+- [Editing files inside a container](#editfile)
+- [Using a LLM via REST API](#restllm)
+- [Useful resources](#resource) 
 
-## <p align="center">Prerequisites</p>
+# <p align="center">Introduction</p> <a name="intro"></a>
+This repository contains a Docker environment for vulnerability testing Large Language Models (LLMs). The environment contains [Giskard](https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html) and [Garak](https://docs.garak.ai/garak) tools for finding vulnerabilities by prompting a LLM, as well as [DependencyCheck](https://github.com/jeremylong/DependencyCheck/blob/main/README.md) for finding vulnerabilities in projects' dependencies. 
 
-### Required
+Following the **Quickstart** guide below will introduce you to each of the tools through examples. The guide contains three **OBJECTIVE**s and by completing all of them, you know you have learned how to utilize the tools for vulnerability testing LLMs. 
+
+<br><br><br>
+
+# <p align="center">Quickstart</p> <a name="quickstart"></a>
+
+## <p align="center">Prerequisites</p> <a name="prereq"></a>
+
+### Required <a name="required"></a>
 
 - Install latest version of [Docker](https://docs.docker.com/engine/install/) and have it running.
 - Make sure port **11434** is not in use by any program.
@@ -15,14 +35,16 @@ This repository contains a Docker environment for vulnerability testing Large La
   - On **Windows** you can check ports that are in use with: `netstat -bano`
   - On **MacOS** `lsof -i -P -n | grep LISTEN` or `netstat -pan` *may* work.
 - ~20Gb of disk space.
+-  5.6 GB of RAM for running containerized [Phi-3-Mini](https://ollama.com/library/phi3) for **giskard** tool.
 
-### Optional
+### Optional <a name="optional"></a>
 - Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) for Docker to allow GPU accelerated container support if you are using a Nvidia GPU.
 - For using **garak** with certain [Hugging Face](https://huggingface.co/) models (Phi-3-Mini for example), you need to create a Hugging Face account [here](https://huggingface.co/join). After you have an account, create and save a Hugging Face User Access Token with "Read" priviliges. You can create one [here](https://huggingface.co/settings/tokens) when you are logged in.
-- To save 15 minutes of time when using DependencyCheck, request a NVD API key [here](https://nvd.nist.gov/developers/request-an-api-key). The link for your personal NVD API key will be sent to your email - save it for later use.
+- To save 15 minutes of time when using **DependencyCheck**, request a NVD API key [here](https://nvd.nist.gov/developers/request-an-api-key). The link for your personal NVD API key will be sent to your email - save it for later use.
 
+<br><br><br>
 
-## <p align="center">Setup</p>
+## <p align="center">Setup</p> <a name="setup"></a>
 
 ### Step 1
 
@@ -37,8 +59,14 @@ This repository contains a Docker environment for vulnerability testing Large La
 *If you are using an **AMD GPU** and wish to utilize its computation in running LLMs, remove lines 1-28 from `compose.yaml` and uncomment lines 34 - 54.*
 - Build the **llm-hackathon** and **ollama** Docker containers with: 
 ```console
-  docker compose up
+  docker compose up -d
 ```
+*If you get an error response from daemon such as "Error response from daemon: error gathering device information while adding custom device "/dev/kfd": no such file or directory", remove the `- /dev/kfd` lines (lines 39 and 47)  from `compose.yaml` file.* 
+
+*If you get an initialization error such as in the image below, remove the deploy blocks from `compose.yaml` file (lines 7-13 and 22-28).* 
+
+![initialization error](assets/img/initialization-error.png "initialization error")
+
 - You may automatically get stuck inside the **ollama** container. Exit it with: `Ctrl + C`
 
 ### Step 2
@@ -65,48 +93,20 @@ This repository contains a Docker environment for vulnerability testing Large La
   docker exec -ti llm_hackathon /bin/bash
 ```
 
-- Type `ls` to see contents of current directory and if you see `giskard` as the output, as in the image below - Congratulations! You have succesfully completed the setup part. 
+- Type `ls` to see contents of current directory and if you see an output as in the image below - Congratulations! You have succesfully completed the setup part. 
 
-![setup complete](/assets/img/setup_done.png "`pwd` output")
+![setup complete](/assets/img/llm_hackathon-container-contents.png "`ls` output")
 
 
 
-<br><br><br><br><br>
+<br><br><br>
 
-## <p align="center">Usage</p>
+## <p align="center">Usage</p> <a name="usage"></a>
 
 The **llm-hackathon** container includes [Garak](https://docs.garak.ai/garak) and [Giskard](https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html) LLM vulnerability tools, as well as [DependencyCheck](https://github.com/jeremylong/DependencyCheck/blob/main/README.md).
 
 <br><br>
-### <ins>Giskard</ins>
-If you aren't already attached to the **llm_hackathon** container's shell, do so with the command `docker exec -ti llm_hackathon /bin/bash`. 
-
-- Use command `ls` to make sure there is a directory labeled "giskard" in your current directory.
-![setup complete](/assets/img/setup_done.png "`pwd` output")
-
-- If there is, you can check the contents of the "giskard" directory with `ls giskard`.
-- The Python file `llm_scan.py` contains a Python script that runs a Giskard LLM scan on the LLM previously downloaded to the **ollama** container (Default: 'phi3', you need to change `MODEL` parameter in `llm_scan.py` if you selected a different model).
-- You can define a custom dataset that will be used to evaluate the LLM by altering the `custom_dataset` parameter in the `llm_scan.py` file.
-- You can start the Giskard LLM Scan with:
-```console
-  python3 giskard/llm_scan.py
-```
-- After the scan is complete, the Giskard tool will generate an evaluation report into the current directory labeled `giskard_scan_results.html`.
-- You can copy the results file to your local host machine and explore the report in browser:
-  - Exit the container with command `exit` or by pressing `Ctrl + D`
-  - Run command:
-```console
-  docker cp llm_hackathon:/home/ubuntu/giskard_scan_results.html .
-```
--
-    - Open the `giskard_scan_results.html` in a browser and you should see a report such as in the image below.
-
-![Giskard report](/assets/img/giskard_report.PNG "Giskard report")
-
-***Note:** Running the Giskard LLM Scan can take up to an hour or even several hours based on the computation power the LLM is being run on and the size of the dataset used to evaluate the LLM. This repository contains an example evaluation report in the giskard directory labeled `giskard/giskard_scan_results.html` that was produced after running the scan on Phi-3-Mini model using [Hackaprompt dataset](https://huggingface.co/datasets/hackaprompt/hackaprompt-dataset). You can open this `html` file within your browser, and explore what kind of a report the tool would produce after running the complete scan.*
-  
-<br><br>
-### <ins>Garak</ins>
+### <ins>Garak</ins> <a name="garak"></a>
 
 If you aren't already attached to the **llm_hackathon** container's shell, do so with the command:
 ```console
@@ -146,32 +146,37 @@ You can copy the reports to your local host machine and explore the report files
 
 ![garak report snippet](/assets/img/garak_report.PNG "garak report snippet")
 
+<br> 
+
+**OBJECTIVE:** Use different probes on the LLM and see what types of vulnerabilities you can find from it (all available probes might not work).
+
 <br><br>
-### <ins>DependencyCheck</ins>
+### <ins>DependencyCheck</ins> <a name="odc"></a>
 
 If you aren't already attached to the **llm_hackathon** container's shell, do so with the command:
 ```console
   docker exec -ti llm_hackathon /bin/bash
 ```
-*Make sure you are in the correct directory. Type `ls` and if the output is `/home/ubuntu` - you are.*
+*Make sure you are in the correct directory. Type `pwd` and if the output is `/home/ubuntu` - you are.*
 
-You can use DependencyCheck to scan any repository utilizing [languages](https://jeremylong.github.io/DependencyCheck/analyzers/index.html) supported by the DependencyCheck project. 
+You can use [DependencyCheck](https://jeremylong.github.io/DependencyCheck/) to scan any repository utilizing [languages](https://jeremylong.github.io/DependencyCheck/analyzers/index.html) supported by the DependencyCheck project. 
 
-Let's analyze Meta's [Llama3 repository](https://github.com/meta-llama/llama3) as an example.
+Let's analyze the tool we just used, [garak](https://github.com/leondz/garak), as an example.
 
 Clone the repository with:
 ```console
-  git clone https://github.com/meta-llama/llama3.git
+  git clone https://github.com/leondz/garak.git
 ```
-Llama3 is a Python project and it contains a `requirements.txt` file, which is a list of required dependencies to run Llama3.
+Garak is a Python project and it contains a `requirements.txt` file, which is a list of required dependencies to run the software.
 
 *To save 15 minutes of your time when running the first analysis, you need a NVD API key. If you don't already have one, you can request one [here](https://nvd.nist.gov/developers/request-an-api-key) and a link to it will be sent to your email.*
 
-To analyze the repository with DependencyCheck, scan the `requirements.txt` file with the command (if you wish not to use a NVD API Key, remove the `--nvdApiKey REPLACE_THIS_WITH_YOUR_API_KEY` part):
+To analyze the repository with DependencyCheck, scan the `requirements.txt` file with the command *(if you wish not to use a NVD API Key, remove the `--nvdApiKey REPLACE_THIS_WITH_YOUR_API_KEY` part)*:
 ```console
   /home/ubuntu/Dependency-Check/dependency-check/bin/dependency-check.sh \
---enableExperimental --out . \
---scan llama3/requirements.txt \
+--enableExperimental \
+--out . \
+--scan garak/requirements.txt \
 --nvdApiKey REPLACE_THIS_WITH_YOUR_API_KEY
 ```
 
@@ -181,20 +186,64 @@ DependencyCheck will generate a `html` file of the analysis report, which you ca
   ```console
   docker cp llm_hackathon:/home/ubuntu/dependency-check-report.html .
 ```
-  - Explore the report files.
+  - Explore the report file.
 
 ![DependencyCheck report snippet](/assets/img/dependency-check-report.PNG "DependencyCheck report snippet")
 
+<br> 
+
+**OBJECTIVE:** Find a Github repository of a software project containing [a supported file type](https://jeremylong.github.io/DependencyCheck/analyzers/index.html) by dependency-check, and see if you can find any vulnerable dependencies from the project.
+
+
 <br><br>
-### <ins>Editing files inside a container</ins>
+### <ins>Giskard</ins> <a name="giskard"></a>
+If you aren't already attached to the **llm_hackathon** container's shell, do so with the command `docker exec -ti llm_hackathon /bin/bash`. 
+
+- Use command `ls` to make sure there is a directory labeled "giskard" in your current directory.
+![setup complete](/assets/img/llm_hackathon-container-contents.png "`ls` output")
+
+- If there is, you can check the contents of the "giskard" directory with `ls giskard`.
+- The Python file `llm_scan.py` contains a Python script that runs a Giskard LLM scan on the LLM previously downloaded to the **ollama** container (Default: 'phi3'; You need to change `MODEL` parameter accordingly in `llm_scan.py` file if you selected a different model).
+- You can define a custom dataset that will be used to evaluate the LLM by altering the `custom_dataset` parameter in the `llm_scan.py` file.
+- You can start the Giskard LLM Scan with:
+```console
+  python3 giskard/llm_scan.py
+```
+- After the scan is complete, the Giskard tool will generate an evaluation report into the current directory labeled `giskard_scan_results.html`.
+- You can copy the results file to your local host machine and explore the report in browser:
+  - Exit the container with command `exit` or by pressing `Ctrl + D`
+  - Run command:
+```console
+  docker cp llm_hackathon:/home/ubuntu/giskard_scan_results.html .
+```
+-
+    - Open the `giskard_scan_results.html` in a browser and you should see a report such as in the image below.
+
+![Giskard report](/assets/img/giskard_report.PNG "Giskard report")
+
+***Note:** Running the Giskard LLM Scan can take up to an hour or even several hours based on the computation power the LLM is being run on and the size of the dataset used to evaluate the LLM. This repository contains an example evaluation report in the giskard directory labeled `giskard/giskard_scan_results.html` that was produced after running the scan on Phi-3-Mini model using [Hackaprompt dataset](https://huggingface.co/datasets/hackaprompt/hackaprompt-dataset). You can open this `html` file within your browser, and explore what kind of a report the tool would produce after running the complete scan.*
+
+<br> 
+
+**OBJECTIVE:** Try to conduct the Giskard Scan on some other LLM available in the [Ollama library](https://ollama.com/library). You need to download & run the LLM inside the **ollama** container, and change the `MODEL` parameter in `giskard/llm_scan.py` file accordingly (the Giskard Scan might take quite a long time, so it is recommended to do this last).
+<br><br>
+
+# <p align="center">Editing files inside a container</p>  <a name="editfile"></a>
 
 The **llm_hackathon** container includes [nano](https://www.nano-editor.org/dist/latest/cheatsheet.html) text editor. You can start editing `llm_scan.py` file while connected to the container's shell with the command: 
 ```console
   nano giskard/llm_scan.py
 ```
 
+<br><br>
+# <p align="center">Using a LLM via REST API</p>  <a name="restllm"></a>
+After setting up the environment, you can also generate responses and chat with the model via REST API. The file `chat_api_template.py` contains a template for generating responses to custom prompts. 
+
+For more information, please visit: https://github.com/ollama/ollama/blob/main/docs/api.md
+
+
 <br><br><br><br><br>
-## Useful resources:
+# <p align="center">Useful resources</p> <a name="resources"></a>
 
 [Garak ReadMe](https://github.com/leondz/garak?tab=readme-ov-file)  
 [Garak Documentation](https://docs.garak.ai/garak)  
