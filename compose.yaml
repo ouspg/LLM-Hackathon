@@ -4,13 +4,13 @@ services:
     container_name: llm_hackathon
     stdin_open: true # docker run -i
     tty: true        # docker run -t
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: all
-              capabilities: [gpu]
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [gpu]
   ollama:
     image: ollama/ollama:latest
     container_name: ollama
@@ -19,13 +19,14 @@ services:
       - "11434:11434"
     volumes:
       - ollama_volume:/root/.ollama
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: all
-              capabilities: [gpu]
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [gpu]
+
 
 # ------------------------------------------------------------
 # UNCOMMENT THESE AND REMOVE THE LINES ABOVE (1-28) IF YOU WISH TO 

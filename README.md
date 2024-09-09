@@ -38,13 +38,78 @@ Following the **Quickstart** guide below will introduce you to each of the tools
 -  5.6 GB of RAM for running containerized [Phi-3-Mini](https://ollama.com/library/phi3) for **giskard** tool.
 
 ### Optional <a name="optional"></a>
-- Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) for Docker to allow GPU accelerated container support if you are using a Nvidia GPU.
+ if you are using a Nvidia GPU.
 - For using **garak** with certain [Hugging Face](https://huggingface.co/) models (Phi-3-Mini for example), you need to create a Hugging Face account [here](https://huggingface.co/join). After you have an account, create and save a Hugging Face User Access Token with "Read" priviliges. You can create one [here](https://huggingface.co/settings/tokens) when you are logged in.
 - To save 15 minutes of time when using **DependencyCheck**, request a NVD API key [here](https://nvd.nist.gov/developers/request-an-api-key). The link for your personal NVD API key will be sent to your email - save it for later use.
 
 <br><br><br>
 
 ## <p align="center">Setup</p> <a name="setup"></a>
+
+Running a Large Language Model for inference can be computationally intensive. It is recommended to utilize the computation of your GPU for running the LLM, if you have a compatible GPU for GPU accelerated containers. Below there are several different collapsible Setup sections for different hardware. Follow the one that matches the hardware you are using. If none match, choose **Setup for CPU only**.
+
+<details>
+  <summary>Setup for NVIDIA GPU</summary>
+
+### Step 1 
+
+Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) for Docker to allow GPU accelerated container support. 
+
+### Step 2
+
+- Clone this repository to your local machine with: 
+```console
+  git clone https://github.com/Zippo00/LLM_Hackathon.git
+```
+- Navigate to the repository with: 
+```console
+  cd LLM_Hackathon
+```
+
+- Open `compose.yaml` with your text editor and uncomment the `deploy` blocks (lines 7-13 & 22-28). The `compose.yaml` file should look as in the image below:
+
+![compose.yaml for Nvidia GPU](/assets/img/nvidia-setup.PNG)
+
+- Build the **llm-hackathon** and **ollama** Docker containers with: 
+```console
+  docker compose up -d
+```
+
+*Note: building the container environment may take up to 20 minutes.*
+
+### Step 3
+
+- Make sure the **ollama** container is running with: 
+```console
+  docker container start ollama
+```
+- Download & run [Microsoft's Phi-3-Mini](https://ollama.com/library/phi3) model inside the **ollama** container with: 
+```console
+  docker exec -it ollama ollama run phi3
+```
+*You can use any other LLM from [Ollama Library](https://ollama.com/library) as well. Just replace the `phi3` in the above command with the corresponding LLM tag.*
+- After the download is complete you should be able to chat with the model. Type `/bye` to leave the interactive mode.
+
+### Step 4
+
+- Make sure the **llm-hackathon** container is running with: 
+```console
+  docker container start llm_hackathon
+```
+- Attach to the container's shell with: 
+```console
+  docker exec -ti llm_hackathon /bin/bash
+```
+
+- Type `ls` to see contents of current directory and if you see an output as in the image below - Congratulations! You have succesfully completed the setup part. 
+
+![setup complete](/assets/img/llm_hackathon-container-contents.png "`ls` output") 
+</details>
+
+<br>
+
+<details>
+  <summary>Setup for AMD GPU</summary>
 
 ### Step 1
 
@@ -56,18 +121,19 @@ Following the **Quickstart** guide below will introduce you to each of the tools
 ```console
   cd LLM_Hackathon
 ```
-*If you are using an **AMD GPU** and wish to utilize its computation in running LLMs, remove lines 1-28 from `compose.yaml` and uncomment lines 34 - 54.*
+
+- Open `compose.yaml` with your text editor and uncomment lines 35-55. Remove lines 1-28. The `compose.yaml` file should look as in the image below:
+
+![compose.yaml for AMD GPU](/assets/img/amd-setup.PNG)
+
 - Build the **llm-hackathon** and **ollama** Docker containers with: 
 ```console
   docker compose up -d
 ```
-*If you get an error response from daemon such as "Error response from daemon: error gathering device information while adding custom device "/dev/kfd": no such file or directory", remove the `- /dev/kfd` lines (lines 39 and 47)  from `compose.yaml` file.* 
 
-*If you get an initialization error such as in the image below, remove the deploy blocks from `compose.yaml` file (lines 7-13 and 22-28).* 
+*Note: building the container environment may take up to 20 minutes.*
 
-![initialization error](assets/img/initialization-error.png "initialization error")
-
-- You may automatically get stuck inside the **ollama** container. Exit it with: `Ctrl + C`
+*If you get an error response from daemon such as "Error response from daemon: error gathering device information while adding custom device "/dev/kfd": no such file or directory", remove the `- /dev/kfd` lines (lines 10 and 18)  from `compose.yaml` file.* 
 
 ### Step 2
 
@@ -96,6 +162,114 @@ Following the **Quickstart** guide below will introduce you to each of the tools
 - Type `ls` to see contents of current directory and if you see an output as in the image below - Congratulations! You have succesfully completed the setup part. 
 
 ![setup complete](/assets/img/llm_hackathon-container-contents.png "`ls` output")
+</details>
+
+<br>
+
+<details>
+  <summary>Setup for macOS</summary>
+
+### Step 1
+
+- Clone this repository to your local machine with: 
+```console
+  git clone https://github.com/Zippo00/LLM_Hackathon.git
+```
+- Navigate to the repository with: 
+```console
+  cd LLM_Hackathon
+```
+
+- Open `Dockerfile` with your text editor. Add lines `apt install cargo -y &&  \` and `python3 -m pip install maturin && \` to the `Dockerfile`, so it looks like in the image below:
+
+![Dockerfile for macOS](/assets/img/mac-setup.PNG "Dockerfile for macOS")
+
+- Build the **llm-hackathon** and **ollama** Docker containers with: 
+```console
+  docker compose up -d
+```
+
+*Note: building the container environment may take up to 20 minutes.*
+
+### Step 2
+
+- Make sure the **ollama** container is running with: 
+```console
+  docker container start ollama
+```
+- Download & run [Microsoft's Phi-3-Mini](https://ollama.com/library/phi3) model inside the **ollama** container with: 
+```console
+  docker exec -it ollama ollama run phi3
+```
+*You can use any other LLM from [Ollama Library](https://ollama.com/library) as well. Just replace the `phi3` in the above command with the corresponding LLM tag.*
+- After the download is complete you should be able to chat with the model. Type `/bye` to leave the interactive mode.
+
+### Step 3
+
+- Make sure the **llm-hackathon** container is running with: 
+```console
+  docker container start llm_hackathon
+```
+- Attach to the container's shell with: 
+```console
+  docker exec -ti llm_hackathon /bin/bash
+```
+
+- Type `ls` to see contents of current directory and if you see an output as in the image below - Congratulations! You have succesfully completed the setup part. 
+
+![setup complete](/assets/img/llm_hackathon-container-contents.png "`ls` output")
+</details>
+
+<br>
+
+<details>
+  <summary>Setup for CPU only</summary>
+
+### Step 1
+
+- Clone this repository to your local machine with: 
+```console
+  git clone https://github.com/Zippo00/LLM_Hackathon.git
+```
+- Navigate to the repository with: 
+```console
+  cd LLM_Hackathon
+```
+
+- Build the **llm-hackathon** and **ollama** Docker containers with: 
+```console
+  docker compose up -d
+```
+*Note: building the container environment may take up to 20 minutes.*
+
+### Step 2
+
+- Make sure the **ollama** container is running with: 
+```console
+  docker container start ollama
+```
+- Download & run [Microsoft's Phi-3-Mini](https://ollama.com/library/phi3) model inside the **ollama** container with: 
+```console
+  docker exec -it ollama ollama run phi3
+```
+*You can use any other LLM from [Ollama Library](https://ollama.com/library) as well. Just replace the `phi3` in the above command with the corresponding LLM tag.*
+- After the download is complete you should be able to chat with the model. Type `/bye` to leave the interactive mode.
+
+### Step 3
+
+- Make sure the **llm-hackathon** container is running with: 
+```console
+  docker container start llm_hackathon
+```
+- Attach to the container's shell with: 
+```console
+  docker exec -ti llm_hackathon /bin/bash
+```
+
+- Type `ls` to see contents of current directory and if you see an output as in the image below - Congratulations! You have succesfully completed the setup part. 
+
+![setup complete](/assets/img/llm_hackathon-container-contents.png "`ls` output")
+</details>
 
 
 
