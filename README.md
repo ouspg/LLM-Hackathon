@@ -296,7 +296,7 @@ You should see an output such as in the image below:
 
 You can run the probes on all available models in [Hugging Face Models](https://huggingface.co/models) (some require authentication and more computation power than others). 
 
-Hugging Face API has rate limits, so in order to run garak probes on certain Hugging Face models, we need to set a personal User Access Token as an environment variable. If you don't already have a Hugging Face User Access Token, you can create one [here](https://huggingface.co/settings/tokens) after you have created an account and are logged in to the [Hugging Face](https://huggingface.co/) web platform. The User Accesss Token needs to have "Read" priviledges (See image below).
+Hugging Face API has rate limits, so in order to run garak probes on certain Hugging Face models, we need to set a personal User Access Token as an environment variable. If you don't already have a Hugging Face User Access Token, you can create one [here](https://huggingface.co/settings/tokens) after you have created an account and are logged in to the [Hugging Face](https://huggingface.co/) web platform. The User Accesss Token needs to have "Read" priviledges (see image below).
 
 ![Hugging Face Token creation](/assets/img/hf_token_creation.PNG "Hugging Face Token creation")
 
