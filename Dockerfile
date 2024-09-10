@@ -9,7 +9,9 @@ RUN apt update && \
     apt install curl -y && \
     apt install git -y && \
     apt install default-jdk -y && \
-    python3 -m pip install -U garak && \
+    apt install cargo -y && \
+    python3 -m pip install maturin && \
+    python3 -m pip install -U garak==0.9.0.13 && \
     python3 -m pip install giskard[llm] && \
     python3 -m pip install -U fsspec && \
     python3 -m pip install -U pyarrow && \
