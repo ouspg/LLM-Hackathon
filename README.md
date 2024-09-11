@@ -1,4 +1,4 @@
-# <p align="center">OUSPG LLM Hackathon Environment</p>
+# <p align="center">LLM Hackathon Environment</p>
 
 ## <p align="center">Table of Contents</p>
 
@@ -58,18 +58,18 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
 
 - Clone this repository to your local machine with: 
 ```console
-  git clone https://github.com/Zippo00/LLM_Hackathon.git
+  git clone https://github.com/ouspg/LLM-Hackathon.git
 ```
 - Navigate to the repository with: 
 ```console
-  cd LLM_Hackathon
+  cd LLM-Hackathon
 ```
 
 - Open `compose.yaml` with your text editor and uncomment the `deploy` blocks (lines 7-13 & 22-28). The `compose.yaml` file should look as in the image below:
 
 ![compose.yaml for Nvidia GPU](/assets/img/nvidia-setup.PNG)
 
-- Build the **llm-hackathon** and **ollama** Docker containers with: 
+- Build the **llm_hackathon** and **ollama** Docker containers with: 
 ```console
   docker compose up -d
 ```
@@ -91,7 +91,7 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
 
 ### Step 4
 
-- Make sure the **llm-hackathon** container is running with: 
+- Make sure the **llm_hackathon** container is running with: 
 ```console
   docker container start llm_hackathon
 ```
@@ -114,18 +114,18 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
 
 - Clone this repository to your local machine with: 
 ```console
-  git clone https://github.com/Zippo00/LLM_Hackathon.git
+  git clone https://github.com/ouspg/LLM-Hackathon.git
 ```
 - Navigate to the repository with: 
 ```console
-  cd LLM_Hackathon
+  cd LLM-Hackathon
 ```
 
 - Open `compose.yaml` with your text editor and uncomment lines 35-55. Remove lines 1-28. The `compose.yaml` file should look as in the image below:
 
 ![compose.yaml for AMD GPU](/assets/img/amd-setup.PNG)
 
-- Build the **llm-hackathon** and **ollama** Docker containers with: 
+- Build the **llm_hackathon** and **ollama** Docker containers with: 
 ```console
   docker compose up -d
 ```
@@ -149,7 +149,7 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
 
 ### Step 3
 
-- Make sure the **llm-hackathon** container is running with: 
+- Make sure the **llm_hackathon** container is running with: 
 ```console
   docker container start llm_hackathon
 ```
@@ -172,18 +172,18 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
 
 - Clone this repository to your local machine with: 
 ```console
-  git clone https://github.com/Zippo00/LLM_Hackathon.git
+  git clone https://github.com/ouspg/LLM-Hackathon.git
 ```
 - Navigate to the repository with: 
 ```console
-  cd LLM_Hackathon
+  cd LLM-Hackathon
 ```
 
 - Open `Dockerfile` with your text editor. Add lines `apt install cargo -y &&  \` and `python3 -m pip install maturin && \` to the `Dockerfile`, so it looks like in the image below:
 
 ![Dockerfile for macOS](/assets/img/mac-setup.PNG "Dockerfile for macOS")
 
-- Build the **llm-hackathon** and **ollama** Docker containers with: 
+- Build the **llm_hackathon** and **ollama** Docker containers with: 
 ```console
   docker compose up -d
 ```
@@ -205,7 +205,7 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
 
 ### Step 3
 
-- Make sure the **llm-hackathon** container is running with: 
+- Make sure the **llm_hackathon** container is running with: 
 ```console
   docker container start llm_hackathon
 ```
@@ -228,14 +228,14 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
 
 - Clone this repository to your local machine with: 
 ```console
-  git clone https://github.com/Zippo00/LLM_Hackathon.git
+  git clone https://github.com/ouspg/LLM-Hackathon.git
 ```
 - Navigate to the repository with: 
 ```console
-  cd LLM_Hackathon
+  cd LLM-Hackathon
 ```
 
-- Build the **llm-hackathon** and **ollama** Docker containers with: 
+- Build the **llm_hackathon** and **ollama** Docker containers with: 
 ```console
   docker compose up -d
 ```
@@ -256,7 +256,7 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
 
 ### Step 3
 
-- Make sure the **llm-hackathon** container is running with: 
+- Make sure the **llm_hackathon** container is running with: 
 ```console
   docker container start llm_hackathon
 ```
@@ -276,7 +276,7 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
 
 ## <p align="center">Usage</p> <a name="usage"></a>
 
-The **llm-hackathon** container includes [Garak](https://docs.garak.ai/garak) and [Giskard](https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html) LLM vulnerability tools, as well as [DependencyCheck](https://github.com/jeremylong/DependencyCheck/blob/main/README.md).
+The **llm_hackathon** container includes [Garak](https://docs.garak.ai/garak) and [Giskard](https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html) LLM vulnerability tools, as well as [DependencyCheck](https://github.com/jeremylong/DependencyCheck/blob/main/README.md).
 
 <br><br>
 ### <ins>Garak</ins> <a name="garak"></a>
