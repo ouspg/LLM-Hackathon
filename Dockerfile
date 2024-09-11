@@ -11,10 +11,10 @@ RUN apt update && \
     # apt install cargo -y && \
     # python3 -m pip install maturin && \
     python3 -m pip install -U garak==0.9.0.13 && \
-    python3 -m pip install giskard[llm] && \
-    python3 -m pip install -U fsspec && \
-    python3 -m pip install -U pyarrow && \
-    python3 -m pip install -U huggingface_hub
+    python3 -m pip install giskard[llm]==2.15.0 && \
+    python3 -m pip install -U fsspec==2024.9.0 && \
+    python3 -m pip install -U pyarrow==17.0.0 && \
+    python3 -m pip install -U huggingface_hub==0.24.6
 
 WORKDIR /home/ubuntu/
 COPY giskard/llm_scan.py giskard/llm_scan.py
