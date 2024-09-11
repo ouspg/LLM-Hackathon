@@ -1,4 +1,3 @@
-# Use Ubuntu's current LTS
 FROM ubuntu:jammy-20240530
 
 RUN apt update && \

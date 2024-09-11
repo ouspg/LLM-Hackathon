@@ -357,11 +357,11 @@ To analyze the repository with DependencyCheck, scan the `requirements.txt` file
 
 DependencyCheck will generate a `html` file of the analysis report, which you can copy from the container to your local machine.
   - Exit the container with the command `exit` or by pressing `Ctrl + D`.
-  - Run command:
+  - Run the following command to copy the report to your local machine:
   ```console
   docker cp llm_hackathon:/home/ubuntu/dependency-check-report.html .
 ```
-  - Explore the report file.
+  - Explore the report file:
 
 ![DependencyCheck report snippet](/assets/img/dependency-check-report.PNG "DependencyCheck report snippet")
 
@@ -387,7 +387,7 @@ If you aren't already attached to the **llm_hackathon** container's shell, do so
 - After the scan is complete, the Giskard tool will generate an evaluation report into the current directory labeled `giskard_scan_results.html`.
 - You can copy the results file to your local host machine and explore the report in browser:
   - Exit the container with command `exit` or by pressing `Ctrl + D`
-  - Run command:
+  - Run the following command to copy the report to your local machine:
 ```console
   docker cp llm_hackathon:/home/ubuntu/giskard_scan_results.html .
 ```
