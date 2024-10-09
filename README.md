@@ -21,6 +21,8 @@ This repository contains a Docker environment for vulnerability testing Large La
 
 Following the **Quickstart** guide below will introduce you to each of the tools through examples. The guide contains three **OBJECTIVE**s and by completing all of them, you know you have learned how to utilize the tools for vulnerability testing LLMs. 
 
+You can find a video series showcasing the **Quickstart** at [OUSPG's Youtube Channel](https://www.youtube.com/watch?v=YGzoOfFYayU&list=PL1fscFAejNoAz9gZlsubHdqGKfbswDSK2&index=2&ab_channel=OUSPG).
+
 <br><br><br>
 
 # <p align="center">Quickstart</p> <a name="quickstart"></a>
