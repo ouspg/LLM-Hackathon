@@ -74,7 +74,7 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
 - Build the **llm_hackathon** and **ollama** Docker containers with: 
 ```console
   docker compose up -d
-```
+``` 
 
 > [!NOTE]
 > *Building the container environment may take up to 20 minutes*
