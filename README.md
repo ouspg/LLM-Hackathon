@@ -77,7 +77,7 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
 ``` 
 
 > [!NOTE]
-> *Building the container environment may take up to 20 minutes*
+> Building the container environment may take up to 20 minutes
 
 
 
