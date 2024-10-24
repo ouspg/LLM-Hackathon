@@ -80,6 +80,7 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
 > *Building the container environment may take up to 20 minutes*
 
 
+
 ### Step 3
 
 - Make sure the **ollama** container is running with: 
