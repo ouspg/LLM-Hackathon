@@ -76,8 +76,8 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
   docker compose up -d
 ``` 
 
-> [!NOTE]
-> Building the container environment may take up to 20 minutes
+
+> *Note: Building the container environment may take up to 20 minutes* 
 
 
 
@@ -135,8 +135,7 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
   docker compose up -d
 ```
 
-> [!NOTE]
-> *Building the container environment may take up to 20 minutes*
+> *Note: Building the container environment may take up to 20 minutes*
 
 *If you get an error response from daemon such as "Error response from daemon: error gathering device information while adding custom device "/dev/kfd": no such file or directory", remove the `- /dev/kfd` lines (lines 10 and 18)  from `compose.yaml` file.* 
 
@@ -194,8 +193,8 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
   docker compose up -d
 ```
 
-> [!NOTE]
-> *Building the container environment may take up to 20 minutes*
+
+> *Note: Building the container environment may take up to 20 minutes*
 
 ### Step 2
 
@@ -246,8 +245,8 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
 ```console
   docker compose up -d
 ```
-> [!NOTE]
-> *Building the container environment may take up to 20 minutes*
+
+> *Note: Building the container environment may take up to 20 minutes*
 
 ### Step 2
 
@@ -406,9 +405,9 @@ If you aren't already attached to the **llm_hackathon** container's shell, do so
 
 ![Giskard report](/assets/img/giskard_report.PNG "Giskard report")
 
-***Note:** Running the Giskard LLM Scan can take up to an hour or even several hours based on the computation power the LLM is being run on and the size of the dataset used to evaluate the LLM. This repository contains an example evaluation report in the giskard directory labeled `giskard/giskard_scan_results.html` that was produced after running the scan on Phi-3-Mini model using [Hackaprompt dataset](https://huggingface.co/datasets/hackaprompt/hackaprompt-dataset). You can open this `html` file within your browser, and explore what kind of a report the tool would produce after running the complete scan.*
+***Note:** Running the Giskard LLM Scan can take up to an hour or even several hours based on the computation power the LLM is being run on and the size of the dataset used to evaluate the LLM. This repository contains an example evaluation report in the giskard directory labeled `giskard/giskard_scan_results.html` that was produced after running the scan on Phi-3-Mini model using [Hackaprompt dataset](https://huggingface.co/datasets/hackaprompt/hackaprompt-dataset). You can open this `html` file within your browser, and explore what kind of a report the tool would produce after running the complete scan.* 
 
-> [!NOTE]
+> [!NOTE] 
 > *Running the Giskard LLM Scan can take up to an hour or even several hours based on the computation power the LLM is being run on and the size of the dataset used to evaluate the LLM. This repository contains an example evaluation report in the giskard directory labeled `giskard/giskard_scan_results.html` that was produced after running the scan on Phi-3-Mini model using [Hackaprompt dataset](https://huggingface.co/datasets/hackaprompt/hackaprompt-dataset). You can open this `html` file within your browser, and explore what kind of a report the tool would produce after running the complete scan.*
 
 <br> 
