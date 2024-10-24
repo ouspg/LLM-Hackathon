@@ -76,7 +76,9 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
   docker compose up -d
 ```
 
-*Note: building the container environment may take up to 20 minutes.*
+> [!NOTE]
+> *Building the container environment may take up to 20 minutes*
+
 
 ### Step 3
 
@@ -132,7 +134,8 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
   docker compose up -d
 ```
 
-*Note: building the container environment may take up to 20 minutes.*
+> [!NOTE]
+> *Building the container environment may take up to 20 minutes*
 
 *If you get an error response from daemon such as "Error response from daemon: error gathering device information while adding custom device "/dev/kfd": no such file or directory", remove the `- /dev/kfd` lines (lines 10 and 18)  from `compose.yaml` file.* 
 
@@ -190,7 +193,8 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
   docker compose up -d
 ```
 
-*Note: building the container environment may take up to 20 minutes.*
+> [!NOTE]
+> *Building the container environment may take up to 20 minutes*
 
 ### Step 2
 
@@ -241,7 +245,8 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
 ```console
   docker compose up -d
 ```
-*Note: building the container environment may take up to 20 minutes.*
+> [!NOTE]
+> *Building the container environment may take up to 20 minutes*
 
 ### Step 2
 
@@ -325,7 +330,7 @@ You can copy the reports to your local host machine and explore the report files
 
 <br> 
 
-> [!NOTE] 
+> [!IMPORTANT] 
 > **OBJECTIVE:** Use different probes on the LLM and see what types of vulnerabilities you can find from it (all available probes might not work).
 
 <br><br>
@@ -370,7 +375,7 @@ DependencyCheck will generate a `html` file of the analysis report, which you ca
 
 <br> 
 
-> [!NOTE] 
+> [!IMPORTANT] 
 > **OBJECTIVE:** Find a Github repository of a software project containing [a supported file type](https://jeremylong.github.io/DependencyCheck/analyzers/index.html) by dependency-check, and see if you can find any vulnerable dependencies from the project.
 
 
@@ -402,9 +407,12 @@ If you aren't already attached to the **llm_hackathon** container's shell, do so
 
 ***Note:** Running the Giskard LLM Scan can take up to an hour or even several hours based on the computation power the LLM is being run on and the size of the dataset used to evaluate the LLM. This repository contains an example evaluation report in the giskard directory labeled `giskard/giskard_scan_results.html` that was produced after running the scan on Phi-3-Mini model using [Hackaprompt dataset](https://huggingface.co/datasets/hackaprompt/hackaprompt-dataset). You can open this `html` file within your browser, and explore what kind of a report the tool would produce after running the complete scan.*
 
+> [!NOTE]
+> *Running the Giskard LLM Scan can take up to an hour or even several hours based on the computation power the LLM is being run on and the size of the dataset used to evaluate the LLM. This repository contains an example evaluation report in the giskard directory labeled `giskard/giskard_scan_results.html` that was produced after running the scan on Phi-3-Mini model using [Hackaprompt dataset](https://huggingface.co/datasets/hackaprompt/hackaprompt-dataset). You can open this `html` file within your browser, and explore what kind of a report the tool would produce after running the complete scan.*
+
 <br> 
 
-> [!NOTE] 
+> [!IMPORTANT] 
 >**OBJECTIVE:** Try to conduct the Giskard Scan on some other LLM available in the [Ollama library](https://ollama.com/library). You need to download & run the LLM inside the **ollama** container, and change the `MODEL` parameter in `giskard/llm_scan.py` file accordingly (the Giskard Scan might take quite a long time, so it is recommended to do this last).
 >
 
