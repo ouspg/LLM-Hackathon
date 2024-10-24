@@ -370,7 +370,8 @@ DependencyCheck will generate a `html` file of the analysis report, which you ca
 
 <br> 
 
-**OBJECTIVE:** Find a Github repository of a software project containing [a supported file type](https://jeremylong.github.io/DependencyCheck/analyzers/index.html) by dependency-check, and see if you can find any vulnerable dependencies from the project.
+> [!NOTE] 
+> **OBJECTIVE:** Find a Github repository of a software project containing [a supported file type](https://jeremylong.github.io/DependencyCheck/analyzers/index.html) by dependency-check, and see if you can find any vulnerable dependencies from the project.
 
 
 <br><br>
@@ -403,7 +404,10 @@ If you aren't already attached to the **llm_hackathon** container's shell, do so
 
 <br> 
 
-**OBJECTIVE:** Try to conduct the Giskard Scan on some other LLM available in the [Ollama library](https://ollama.com/library). You need to download & run the LLM inside the **ollama** container, and change the `MODEL` parameter in `giskard/llm_scan.py` file accordingly (the Giskard Scan might take quite a long time, so it is recommended to do this last).
+> [!NOTE] 
+>**OBJECTIVE:** Try to conduct the Giskard Scan on some other LLM available in the [Ollama library](https://ollama.com/library). You need to download & run the LLM inside the **ollama** container, and change the `MODEL` parameter in `giskard/llm_scan.py` file accordingly (the Giskard Scan might take quite a long time, so it is recommended to do this last).
+>
+
 <br><br>
 
 # <p align="center">Editing files inside a container</p>  <a name="editfile"></a>
