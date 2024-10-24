@@ -325,7 +325,7 @@ You can copy the reports to your local host machine and explore the report files
 
 <br> 
 
-**OBJECTIVE:** Use different probes on the LLM and see what types of vulnerabilities you can find from it (all available probes might not work).
+> **OBJECTIVE:** Use different probes on the LLM and see what types of vulnerabilities you can find from it (all available probes might not work).
 
 <br><br>
 ### <ins>DependencyCheck</ins> <a name="odc"></a>
