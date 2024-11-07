@@ -83,6 +83,8 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
 
 ### Step 3
 
+> *Note: If you have less than 5.6GB on your machine, skip this step* 
+
 - Make sure the **ollama** container is running with: 
 ```console
   docker container start ollama
