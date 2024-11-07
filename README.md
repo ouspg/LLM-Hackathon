@@ -392,6 +392,8 @@ DependencyCheck will generate a `html` file of the analysis report, which you ca
 
 > [!NOTE]
 > *If you don´t have 5.6 GB of RAM on your machine and did not deploy a LLM locally with the **ollama** container, you can not use this tool. However, this repository contains an example evaluation report in the giskard directory labeled `giskard/giskard_scan_results.html` that was produced after running the Giskard LLM scan on Phi-3-Mini model using [Hackaprompt dataset](https://huggingface.co/datasets/hackaprompt/hackaprompt-dataset). You can open this `html` file within your browser, and explore what kind of a report the tool would produce after running the complete scan.*
+
+> [!NOTE]
 > *Running the Giskard LLM Scan can take up to an hour or even several hours based on the computation power the LLM is being run on and the size of the dataset used to evaluate the LLM. You can try to start the Giskard LLM Scan and then abort the scan with `Ctrl + C`, if you do not wish to wait for the scan to complete. This repository contains an example evaluation report in the giskard directory labeled `giskard/giskard_scan_results.html` that was produced after running the Giskard LLM scan on Phi-3-Mini model using [Hackaprompt dataset](https://huggingface.co/datasets/hackaprompt/hackaprompt-dataset). You can open this `html` file within your browser, and explore what kind of a report the tool would produce after running the complete scan.*
 
 If you aren't already attached to the **llm_hackathon** container's shell, do so with the command `docker exec -ti llm_hackathon /bin/bash`. 
