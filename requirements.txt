@@ -1,0 +1,5 @@
+garak==0.9.0.13
+giskard[llm]
+fsspec
+pyarrow
+huggingface_hub
