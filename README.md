@@ -83,7 +83,7 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
 
 ### Step 3
 
-> *Note: If you have less than 5.6GB on your machine, skip this step* 
+> *Note: If you have less than 5.6GB of RAM on your machine, skip this step* 
 
 - Make sure the **ollama** container is running with: 
 ```console
@@ -143,7 +143,7 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
 
 ### Step 2
 
-> *Note: If you have less than 5.6GB on your machine, skip this step* 
+> *Note: If you have less than 5.6GB of RAM on your machine, skip this step* 
 
 - Make sure the **ollama** container is running with: 
 ```console
@@ -202,7 +202,7 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
 
 ### Step 2
 
-> *Note: If you have less than 5.6GB on your machine, skip this step* 
+> *Note: If you have less than 5.6GB of RAM on your machine, skip this step* 
 
 - Make sure the **ollama** container is running with: 
 ```console
@@ -256,7 +256,7 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
 
 ### Step 2
 
-> *Note: If you have less than 5.6GB on your machine, skip this step* 
+> *Note: If you have less than 5.6GB of RAM on your machine, skip this step* 
 
 - Make sure the **ollama** container is running with: 
 ```console
