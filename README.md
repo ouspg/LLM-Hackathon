@@ -1,4 +1,4 @@
-# <p align="center">OUSPG LLM Hackathon Environment</p>
+# <p align="center">LLM Hackathon Environment</p>
 
 ## <p align="center">Table of Contents</p>
 
@@ -20,6 +20,8 @@
 This repository contains a Docker environment for vulnerability testing Large Language Models (LLMs). The environment contains [Giskard](https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html) and [Garak](https://docs.garak.ai/garak) tools for finding vulnerabilities by prompting a LLM, as well as [DependencyCheck](https://github.com/jeremylong/DependencyCheck/blob/main/README.md) for finding vulnerabilities in projects' dependencies. 
 
 Following the **Quickstart** guide below will introduce you to each of the tools through examples. The guide contains three **OBJECTIVE**s and by completing all of them, you know you have learned how to utilize the tools for vulnerability testing LLMs. 
+
+You can find a video series showcasing the **Quickstart** at [OUSPG's Youtube Channel](https://www.youtube.com/watch?v=YGzoOfFYayU&list=PL1fscFAejNoAz9gZlsubHdqGKfbswDSK2&index=2&ab_channel=OUSPG).
 
 <br><br><br>
 
@@ -58,25 +60,30 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
 
 - Clone this repository to your local machine with: 
 ```console
-  git clone https://github.com/Zippo00/LLM_Hackathon.git
+  git clone https://github.com/ouspg/LLM-Hackathon.git
 ```
 - Navigate to the repository with: 
 ```console
-  cd LLM_Hackathon
+  cd LLM-Hackathon
 ```
 
 - Open `compose.yaml` with your text editor and uncomment the `deploy` blocks (lines 7-13 & 22-28). The `compose.yaml` file should look as in the image below:
 
 ![compose.yaml for Nvidia GPU](/assets/img/nvidia-setup.PNG)
 
-- Build the **llm-hackathon** and **ollama** Docker containers with: 
+- Build the **llm_hackathon** and **ollama** Docker containers with: 
 ```console
   docker compose up -d
-```
+``` 
 
-*Note: building the container environment may take up to 20 minutes.*
+
+> *Note: Building the container environment may take up to 20 minutes* 
+
+
 
 ### Step 3
+
+> *Note: If you have less than 5.6GB of RAM on your machine, skip this step* 
 
 - Make sure the **ollama** container is running with: 
 ```console
@@ -91,7 +98,7 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
 
 ### Step 4
 
-- Make sure the **llm-hackathon** container is running with: 
+- Make sure the **llm_hackathon** container is running with: 
 ```console
   docker container start llm_hackathon
 ```
@@ -114,27 +121,29 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
 
 - Clone this repository to your local machine with: 
 ```console
-  git clone https://github.com/Zippo00/LLM_Hackathon.git
+  git clone https://github.com/ouspg/LLM-Hackathon.git
 ```
 - Navigate to the repository with: 
 ```console
-  cd LLM_Hackathon
+  cd LLM-Hackathon
 ```
 
 - Open `compose.yaml` with your text editor and uncomment lines 35-55. Remove lines 1-28. The `compose.yaml` file should look as in the image below:
 
 ![compose.yaml for AMD GPU](/assets/img/amd-setup.PNG)
 
-- Build the **llm-hackathon** and **ollama** Docker containers with: 
+- Build the **llm_hackathon** and **ollama** Docker containers with: 
 ```console
   docker compose up -d
 ```
 
-*Note: building the container environment may take up to 20 minutes.*
+> *Note: Building the container environment may take up to 20 minutes*
 
 *If you get an error response from daemon such as "Error response from daemon: error gathering device information while adding custom device "/dev/kfd": no such file or directory", remove the `- /dev/kfd` lines (lines 10 and 18)  from `compose.yaml` file.* 
 
 ### Step 2
+
+> *Note: If you have less than 5.6GB of RAM on your machine, skip this step* 
 
 - Make sure the **ollama** container is running with: 
 ```console
@@ -149,7 +158,7 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
 
 ### Step 3
 
-- Make sure the **llm-hackathon** container is running with: 
+- Make sure the **llm_hackathon** container is running with: 
 ```console
   docker container start llm_hackathon
 ```
@@ -172,25 +181,28 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
 
 - Clone this repository to your local machine with: 
 ```console
-  git clone https://github.com/Zippo00/LLM_Hackathon.git
+  git clone https://github.com/ouspg/LLM-Hackathon.git
 ```
 - Navigate to the repository with: 
 ```console
-  cd LLM_Hackathon
+  cd LLM-Hackathon
 ```
 
 - Open `Dockerfile` with your text editor. Add lines `apt install cargo -y &&  \` and `python3 -m pip install maturin && \` to the `Dockerfile`, so it looks like in the image below:
 
 ![Dockerfile for macOS](/assets/img/mac-setup.PNG "Dockerfile for macOS")
 
-- Build the **llm-hackathon** and **ollama** Docker containers with: 
+- Build the **llm_hackathon** and **ollama** Docker containers with: 
 ```console
   docker compose up -d
 ```
 
-*Note: building the container environment may take up to 20 minutes.*
+
+> *Note: Building the container environment may take up to 20 minutes*
 
 ### Step 2
+
+> *Note: If you have less than 5.6GB of RAM on your machine, skip this step* 
 
 - Make sure the **ollama** container is running with: 
 ```console
@@ -205,7 +217,7 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
 
 ### Step 3
 
-- Make sure the **llm-hackathon** container is running with: 
+- Make sure the **llm_hackathon** container is running with: 
 ```console
   docker container start llm_hackathon
 ```
@@ -228,20 +240,23 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
 
 - Clone this repository to your local machine with: 
 ```console
-  git clone https://github.com/Zippo00/LLM_Hackathon.git
+  git clone https://github.com/ouspg/LLM-Hackathon.git
 ```
 - Navigate to the repository with: 
 ```console
-  cd LLM_Hackathon
+  cd LLM-Hackathon
 ```
 
-- Build the **llm-hackathon** and **ollama** Docker containers with: 
+- Build the **llm_hackathon** and **ollama** Docker containers with: 
 ```console
   docker compose up -d
 ```
-*Note: building the container environment may take up to 20 minutes.*
+
+> *Note: Building the container environment may take up to 20 minutes*
 
 ### Step 2
+
+> *Note: If you have less than 5.6GB of RAM on your machine, skip this step* 
 
 - Make sure the **ollama** container is running with: 
 ```console
@@ -256,7 +271,7 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
 
 ### Step 3
 
-- Make sure the **llm-hackathon** container is running with: 
+- Make sure the **llm_hackathon** container is running with: 
 ```console
   docker container start llm_hackathon
 ```
@@ -276,7 +291,7 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
 
 ## <p align="center">Usage</p> <a name="usage"></a>
 
-The **llm-hackathon** container includes [Garak](https://docs.garak.ai/garak) and [Giskard](https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html) LLM vulnerability tools, as well as [DependencyCheck](https://github.com/jeremylong/DependencyCheck/blob/main/README.md).
+The **llm_hackathon** container includes [Garak](https://docs.garak.ai/garak) and [Giskard](https://docs.giskard.ai/en/stable/open_source/scan/scan_llm/index.html) LLM vulnerability tools, as well as [DependencyCheck](https://github.com/jeremylong/DependencyCheck/blob/main/README.md).
 
 <br><br>
 ### <ins>Garak</ins> <a name="garak"></a>
@@ -323,7 +338,8 @@ You can copy the reports to your local host machine and explore the report files
 
 <br> 
 
-**OBJECTIVE:** Use different probes on the LLM and see what types of vulnerabilities you can find from it (all available probes might not work).
+> [!IMPORTANT] 
+> **OBJECTIVE:** Use different probes on the LLM and see what types of vulnerabilities you can find from it (all available probes might not work).
 
 <br><br>
 ### <ins>DependencyCheck</ins> <a name="odc"></a>
@@ -367,11 +383,17 @@ DependencyCheck will generate a `html` file of the analysis report, which you ca
 
 <br> 
 
-**OBJECTIVE:** Find a Github repository of a software project containing [a supported file type](https://jeremylong.github.io/DependencyCheck/analyzers/index.html) by dependency-check, and see if you can find any vulnerable dependencies from the project.
+> [!IMPORTANT] 
+> **OBJECTIVE:** Find a Github repository of a software project containing [a supported file type](https://jeremylong.github.io/DependencyCheck/analyzers/index.html) by dependency-check, and see if you can find any vulnerable dependencies from the project.
 
 
 <br><br>
 ### <ins>Giskard</ins> <a name="giskard"></a>
+
+> [!NOTE]
+> - *If you don´t have 5.6 GB of RAM on your machine and did not deploy a LLM locally with the **ollama** container, you can not use this tool. However, this repository contains an example evaluation report in the "giskard" directory labeled `giskard/giskard_scan_results.html` that was produced after running the Giskard LLM scan on Phi-3-Mini model using [Hackaprompt dataset](https://huggingface.co/datasets/hackaprompt/hackaprompt-dataset). You can open this `html` file within your browser, and explore what kind of a report the tool would produce after running the complete scan.*
+> - *Running the Giskard LLM Scan can take up to an hour or even several hours based on the computation power the LLM is being run on and the size of the dataset used to evaluate the LLM. You can try to start the Giskard LLM Scan and then abort the scan with `Ctrl + C`, if you do not wish to wait for the scan to complete. This repository contains an example evaluation report in the "giskard" directory labeled `giskard/giskard_scan_results.html` that was produced after running the Giskard LLM scan on Phi-3-Mini model using [Hackaprompt dataset](https://huggingface.co/datasets/hackaprompt/hackaprompt-dataset). You can open this `html` file within your browser, and explore what kind of a report the tool would produce after running the complete scan.*
+
 If you aren't already attached to the **llm_hackathon** container's shell, do so with the command `docker exec -ti llm_hackathon /bin/bash`. 
 
 - Use command `ls` to make sure there is a directory labeled "giskard" in your current directory.
@@ -396,11 +418,13 @@ If you aren't already attached to the **llm_hackathon** container's shell, do so
 
 ![Giskard report](/assets/img/giskard_report.PNG "Giskard report")
 
-***Note:** Running the Giskard LLM Scan can take up to an hour or even several hours based on the computation power the LLM is being run on and the size of the dataset used to evaluate the LLM. This repository contains an example evaluation report in the giskard directory labeled `giskard/giskard_scan_results.html` that was produced after running the scan on Phi-3-Mini model using [Hackaprompt dataset](https://huggingface.co/datasets/hackaprompt/hackaprompt-dataset). You can open this `html` file within your browser, and explore what kind of a report the tool would produce after running the complete scan.*
 
 <br> 
 
-**OBJECTIVE:** Try to conduct the Giskard Scan on some other LLM available in the [Ollama library](https://ollama.com/library). You need to download & run the LLM inside the **ollama** container, and change the `MODEL` parameter in `giskard/llm_scan.py` file accordingly (the Giskard Scan might take quite a long time, so it is recommended to do this last).
+> [!IMPORTANT] 
+>**OBJECTIVE:** Try to conduct the Giskard Scan on some other LLM available in the [Ollama library](https://ollama.com/library). You need to download & run the LLM inside the **ollama** container, and change the `MODEL` parameter in `giskard/llm_scan.py` file accordingly (the Giskard Scan might take quite a long time, so it is recommended to do this last).
+>
+
 <br><br>
 
 # <p align="center">Editing files inside a container</p>  <a name="editfile"></a>
