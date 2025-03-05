@@ -327,10 +327,14 @@ Now we can, for example, run `malwaregen.Evasion` probe on Microsoft's `Phi-3-Mi
 
 After garak has ran its probe(s), it will generate reports into `garak_runs` directory. 
 You can copy the reports to your local host machine and explore the report files. The `html` file contains a summary of the results and the `json` files contain chat logs:
+  - The directory currently needs root permissions to access, so let's change that with:
+    ```console
+    chmod -R a+rwX /root/.local/share/garak/garak_runs
+    ```
   - Exit the container with command `exit` or by pressing `Ctrl + D`
   - Run the following command to copy the report files to your local machine into a directory labeled "garak_runs":
   ```console
-  docker cp llm_hackathon:/home/ubuntu/garak_runs/ garak_runs
+  docker cp llm_hackathon:/root/.local/share/garak/garak_runs garak_runs
 ```
   - Explore the report files:
 
