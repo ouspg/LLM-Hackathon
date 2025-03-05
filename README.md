@@ -356,7 +356,7 @@ Let's analyze the tool we just used, [garak](https://github.com/leondz/garak), a
 
 Clone the repository with:
 ```console
-  git clone https://github.com/leondz/garak.git
+  git clone https://github.com/NVIDIA/garak.git
 ```
 Garak is a Python project and it contains a `requirements.txt` file, which is a list of required dependencies to run the software.
 
