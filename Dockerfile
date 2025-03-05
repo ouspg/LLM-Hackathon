@@ -25,6 +25,7 @@ RUN apt install default-jdk -y
 #RUN pip install maturin
 
 WORKDIR /home/ubuntu/
+
 # Install Python dependencies
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
