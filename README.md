@@ -188,7 +188,7 @@ Install and configure [NVIDIA Container Toolkit](https://docs.nvidia.com/datacen
   cd LLM-Hackathon
 ```
 
-- Open `Dockerfile` with your text editor. Uncomment lines `RUN apt install cargo -y` and `RUN pip install maturin` to the `Dockerfile`, so it looks like in the image below:
+- Open `Dockerfile` with your text editor. Uncomment lines `RUN apt install cargo -y` and `RUN pip install maturin` in the `Dockerfile`, so it looks like in the image below:
 
 ![Dockerfile for macOS](/assets/img/mac-setup.PNG "Dockerfile for macOS")
 
