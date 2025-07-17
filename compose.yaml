@@ -4,6 +4,8 @@ services:
     container_name: llm_hackathon
     stdin_open: true # docker run -i
     tty: true        # docker run -t
+    networks:
+      - docker-network
     # deploy:
     #   resources:
     #     reservations:
@@ -15,6 +17,8 @@ services:
     image: ollama/ollama:latest
     container_name: ollama
     hostname: ollama
+    networks:
+      - docker-network
     ports:
       - "11434:11434"
     volumes:
@@ -36,6 +40,8 @@ services:
 #   llm_hackathon:
 #     build: .
 #     container_name: llm_hackathon
+#     networks:
+#       - docker-network
 #     devices:
 #       - /dev/kfd
 #       - /dev/dri
@@ -49,10 +55,14 @@ services:
 #       - /dev/dri
 #     container_name: ollama
 #     hostname: ollama
+#     networks:
+#       - docker-network
 #     ports:
 #       - "11434:11434"
 #     volumes:
 #       - ollama_volume:/root/.ollama
 
+networks:
+  docker-network:
 volumes:
   ollama_volume:

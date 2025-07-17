@@ -1,0 +1,7 @@
+system:
+  verbose: 0
+
+  plugins:
+  generators:
+  ollama:
+    host: "http://ollama:11434"

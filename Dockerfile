@@ -28,10 +28,11 @@ WORKDIR /home/ubuntu/
 
 # Install Python dependencies
 COPY requirements.txt requirements.txt
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt --no-deps
 
-# Setup Giskard & Dependency-Check
+# Setup Giskard & Dependency-Check & garak files
 COPY giskard/llm_scan.py giskard/llm_scan.py
+COPY garak/garak_config.yaml garak/garak_config.yaml
 COPY Dependency-Check/dependency-check-example-report.html Dependency-Check/dependency-check-example-report.html
 WORKDIR /home/ubuntu/Dependency-Check
 RUN VERSION=$(curl -s https://dependency-check.github.io/DependencyCheck/current.txt) && \
