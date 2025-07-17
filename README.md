@@ -75,8 +75,10 @@
 - After you feel like you know enough about garak, move on to trying to beat [Gandalf](https://gandalf.lakera.ai/baseline)
 
 
+<br><br>
 
 ### The rest of the README is instructions for setting up the environment, and operating DependencyCheck and Giskard tools (and garak when it is no longer bugged).
+<br><br><br><br>
 
 ## <p align="center">Table of Contents</p>
 
