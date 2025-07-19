@@ -46,14 +46,14 @@
 ### Prerequisites:
 - Install latest version of [Docker]((https://docs.docker.com/engine/install/)) if it is not already installed. 
 - Clone this repository to your laptop, and complete the [Setup](#setup) section of this README.
-- Install Python package [garak]() *(requires Python 3.10 or higher)* to your computer by for example:
+- Install Python package [garak](https://docs.garak.ai/garak) *(requires Python 3.10 or higher version)* to your computer, for example like this:
   - Create a Python virtual environment with: `python -m venv venv`
   - Activate the virtual environment with:
     - On Windows: `source venv/Scripts/activate`
-    - on Linux: `source venv/bin/activate`
+    - on Linux & macOS: `source venv/bin/activate`
   - Install garak with pip: `pip install garak`
 
-### Operating garak
+### Operating garak:
 - Navigate to the `LLM-Hackathon` directory
 - Make sure `ollama` container is running the Phi-3 model with: 
 ```console
@@ -71,10 +71,10 @@
 ```
 - If the probe runs successfully, it should generate a report of the results into a `garak_runs` directory *(specific location of the directory is detailed in the terminal output after garak has ran the probe)*
 - Try out at least 3 different probes on the Phi-3 model and examine the generated reports *(replace the `test.Blank` probe in the command above with a different probe to run it)* 
-- If there's downtime when garak is running it's probes, you can already try the [Gandalf game](https://gandalf.lakera.ai/baseline)
+- If there's downtime when garak is running its probes, you can already try the [Gandalf game](https://gandalf.lakera.ai/baseline)
 - After you feel like you know enough about garak, move on to trying to beat [Gandalf](https://gandalf.lakera.ai/baseline)
 
-
+<br>
 <br><br>
 
 ### The rest of the README is instructions for setting up the environment, and operating DependencyCheck and Giskard tools (and garak when it is no longer bugged).
