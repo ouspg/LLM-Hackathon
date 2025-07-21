@@ -185,7 +185,9 @@ You can find a video series showcasing the **Quickstart** at [OUSPG's Youtube Ch
 -  5.6 GB of RAM for running containerized [Phi-3-Mini](https://ollama.com/library/phi3) for **giskard** tool.
 
 ### Optional <a name="optional"></a>
+<!---
 - For using **garak** with certain [Hugging Face](https://huggingface.co/) models (Phi-3-Mini for example), you need to create a Hugging Face account [here](https://huggingface.co/join). After you have an account, create and save a Hugging Face User Access Token with "Read" priviliges. You can create one [here](https://huggingface.co/settings/tokens) when you are logged in.
+-->
 - To save 15 minutes of time when using **DependencyCheck**, request a NVD API key [here](https://nvd.nist.gov/developers/request-an-api-key). The link for your personal NVD API key will be sent to your email - save it for later use.
 
 <br><br><br>
