@@ -70,7 +70,7 @@ You can copy the reports to your local host machine and explore the report files
 <br> 
 
 
-> *Note: 
+> [!NOTE]
 > - Try out at least 3 different probes on the Phi-3 model and examine the generated reports *(or as many as you have time to, if the probing takes a considerable amout of time - the speed at which the probes run depend on the hardware available for running the language model)*.
 > - If there's downtime when garak is running it's probes, you can already try the [Gandalf game](https://gandalf.lakera.ai/baseline)
 >  - After you feel like you know enough about garak, move on to trying to beat [Gandalf](https://gandalf.lakera.ai/baseline)
@@ -134,7 +134,7 @@ You can copy the reports to your local host machine and explore the report files
 <br> 
 
 
-> *Note: 
+> [!NOTE]
 > - Try out at least 3 different probes on the Phi-3 model and examine the generated reports *(or as many as you have time to, if the probing takes a considerable amout of time - the speed at which the probes run depend on the hardware available for running the language model)*.
 > - If there's downtime when garak is running it's probes, you can already try the [Gandalf game](https://gandalf.lakera.ai/baseline)
 >  - After you feel like you know enough about garak, move on to trying to beat [Gandalf](https://gandalf.lakera.ai/baseline)
