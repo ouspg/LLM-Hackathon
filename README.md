@@ -31,7 +31,7 @@
 
 Now connect to the **llm_hackathon** container's shell with the command:
 ```console
-  docker container exec -it /bin/bash
+  docker container exec -it llm_hackathon /bin/bash
 ``` 
 
 You can now use [garak](https://docs.garak.ai/garak) via the shell. To list different available garak probes, type:   
@@ -75,7 +75,7 @@ You can copy the reports to your local host machine and explore the report files
 > - If there's downtime when garak is running it's probes, you can already try the [Gandalf game](https://gandalf.lakera.ai/baseline)
 >  - After you feel like you know enough about garak, move on to trying to beat [Gandalf](https://gandalf.lakera.ai/baseline)
 
-# <p align="center">Instruction for those using their own laptop:</p> <a name="own-laptop"></a>
+# <p align="center">Instructions for those using their own laptop:</p> <a name="own-laptop"></a>
 
 ### Prerequisites:
 - Install latest version of [Docker]((https://docs.docker.com/engine/install/)) if it is not already installed. 
@@ -95,7 +95,7 @@ You can copy the reports to your local host machine and explore the report files
 
 Now attach to the **llm_hackathon** container's shell with the command:
 ```console
-  docker container exec -it /bin/bash
+  docker container exec -it llm_hackathon /bin/bash
 ``` 
 
 You can now use [garak](https://docs.garak.ai/garak) via the shell. To list different available garak probes, type:   
