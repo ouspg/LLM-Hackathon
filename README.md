@@ -9,7 +9,7 @@
 
 <br><br><br>
 
-# <p align="center">Instruction for those using a computer in the computer rooms:</p> <a name="computer-room"></a>
+# <p align="center">Instructions for those using a computer in the computer rooms:</p> <a name="computer-room"></a>
 - Log into one of the computers and open terminal
 - Make sure Docker is installed with the command `docker -v` *(should output the installed version number)*. If Docker is not installed, try a different computer.
 - Navigate to the `LLM-Hackathon` directory within the terminal (should be installed *somewhere* on the computer).
