@@ -12,7 +12,8 @@
 # <p align="center">Instruction for those using a computer in the computer rooms:</p> <a name="computer-room"></a>
 - Log into one of the computers and open terminal
 - Make sure Docker is installed with the command `docker -v` *(should output the installed version number)*. If Docker is not installed, try a different computer.
-- Navigate to the `LLM-Hackathon` directory within the terminal (should be installed *somewhere* on the computer) 
+- Navigate to the `LLM-Hackathon` directory within the terminal (should be installed *somewhere* on the computer).
+
 - See installed Docker containers with the command:
 ```console
   docker ps -a
@@ -27,57 +28,121 @@
   docker exec -it ollama ollama run phi3
 ``` 
 - After the download is complete, you should be able to chat with the model via the terminal. Type `/bye` to exit the interactive mode.
-- Make sure garak is installed locally and see available probes with the command:
+
+Now connect to the **llm_hackathon** container's shell with the command:
 ```console
-  python -m garak --list_probes
+  docker container exec -it /bin/bash
 ``` 
-- Make sure you are inside the `LLM-Hackathon` directory and that there is a directory labeled `garak_misc` with the command `dir` on Windows or `ls` on Linux
-- Run a test probe on the Phi-3 model to make sure everything works with the command:
+
+You can now use [garak](https://docs.garak.ai/garak) via the shell. To list different available garak probes, type:   
 ```console
-  python -m garak --config garak_misc/garak_config.yaml --model_type ollama --model_name phi3 --probes test.Blank
-``` 
-- If the probe runs successfully, it should generate a report of the results into a `garak_runs` directory *(specific location of the directory is detailed in the terminal output after garak has ran the probe)*
-- Try out at least 3 different probes on the Phi-3 model and examine the generated reports *(replace the `test.Blank` probe in the command above with a different probe to run it)* 
-- If there's downtime when garak is running it's probes, you can already try the [Gandalf game](https://gandalf.lakera.ai/baseline)
-- After you feel like you know enough about garak, move on to trying to beat [Gandalf](https://gandalf.lakera.ai/baseline)
+  python3 -m garak --list_probes
+```
+You should see an output such as in the image below:
+
+![garak probes list](/assets/img/garak_probes.PNG "garak probes list")
+
+You can run the probes on all available [ollama models](https://ollama.com/library), as long as your hardware can run the model *(you first need to make sure the model you wish to probe is running inside the **ollama** container)*.
+
+With Microsoft's `Phi-3-Mini` model running inside the **ollama** container, we can, for example, run `dan.DAN_Jailbreak` probe on the Phi-3-Mini model with the command:
+
+```console
+  python3 -m garak --config garak_misc/garak_config.yaml --model_type ollama --model_name phi3 --probes dan.DAN_Jailbreak
+```
+
+The command above first configures garak to probe an ollama model running at *ht<span>tp://ollama:11434* with the *garak_misc/garak_config.yaml* file through the `--config` flag. Then the command instructs garak that the model is an *ollama* model with the `--model_type` flag, and that the model being probed is labeled *phi3* with the `--model_name` flag. And finally, `--probes` flag let's us list all the probes that will be ran on the model. 
+
+After garak has ran its probe(s), it will generate reports into `garak_runs` directory. 
+You can copy the reports to your local host machine and explore the report files. The `html` file contains a summary of the results and the `json` files contain chat logs:
+  - The directory currently needs root permissions to access, so let's change that with:
+    ```console
+    chmod -R a+rwX /root/.local/share/garak/garak_runs
+    ```
+  - Exit the container with command `exit` or by pressing `Ctrl + D`
+  - Run the following command to copy the report files to your local machine into a directory labeled "garak_runs":
+  ```console
+  docker cp llm_hackathon:/root/.local/share/garak/garak_runs garak_runs
+```
+  - Explore the report files:
+
+![garak report snippet](/assets/img/garak_report.PNG "garak report snippet")
+
+<br> 
+
+
+> *Note: 
+> - Try out at least 3 different probes on the Phi-3 model and examine the generated reports *(or as many as you have time to, if the probing takes a considerable amout of time - the speed at which the probes run depend on the hardware available for running the language model)*.
+> - If there's downtime when garak is running it's probes, you can already try the [Gandalf game](https://gandalf.lakera.ai/baseline)
+>  - After you feel like you know enough about garak, move on to trying to beat [Gandalf](https://gandalf.lakera.ai/baseline)
 
 # <p align="center">Instruction for those using their own laptop:</p> <a name="own-laptop"></a>
 
 ### Prerequisites:
 - Install latest version of [Docker]((https://docs.docker.com/engine/install/)) if it is not already installed. 
 - Clone this repository to your laptop, and complete the [Setup](#setup) section of this README.
-- Install Python package [garak](https://docs.garak.ai/garak) *(requires Python 3.10 or higher version)* to your computer, for example like this:
-  - Create a Python virtual environment with: `python -m venv venv`
-  - Activate the virtual environment with:
-    - On Windows: `source venv/Scripts/activate`
-    - on Linux & macOS: `source venv/bin/activate`
-  - Install garak with pip: `pip install garak`
 
 ### Operating garak:
 - Navigate to the `LLM-Hackathon` directory
-- Make sure `ollama` container is running the Phi-3 model with: 
+- Make sure **ollama** and **llm_hackathon** containers are running with:
+```console
+  docker container start ollama llm_hackathon 
+```  
+- Download and run `Phi-3-Mini` model inside the **ollama** container with: 
 ```console
   docker exec -it ollama ollama run phi3 
 ```
 - Once the model is downloaded and running, you should be able to chat with the model via the terminal. Type `/bye` to exit the interactive mode.
-- Make sure `garak` is installed locally and see available probes with the command:
+
+Now attach to the **llm_hackathon** container's shell with the command:
 ```console
-  python -m garak --list_probes
+  docker container exec -it /bin/bash
 ``` 
-- Make sure you are inside the `LLM-Hackathon` directory and that there is a directory labeled `garak_misc` with the command `dir` on Windows or `ls` on Linux
-- Run a test probe on the Phi-3 model to make sure everything works with the command:
+
+You can now use [garak](https://docs.garak.ai/garak) via the shell. To list different available garak probes, type:   
 ```console
-  python -m garak --config garak_misc/garak_config.yaml --model_type ollama --model_name phi3 --probes test.Blank
+  python3 -m garak --list_probes
 ```
-- If the probe runs successfully, it should generate a report of the results into a `garak_runs` directory *(specific location of the directory is detailed in the terminal output after garak has ran the probe)*
-- Try out at least 3 different probes on the Phi-3 model and examine the generated reports *(replace the `test.Blank` probe in the command above with a different probe to run it)* 
-- If there's downtime when garak is running its probes, you can already try the [Gandalf game](https://gandalf.lakera.ai/baseline)
-- After you feel like you know enough about garak, move on to trying to beat [Gandalf](https://gandalf.lakera.ai/baseline)
+You should see an output such as in the image below:
+
+![garak probes list](/assets/img/garak_probes.PNG "garak probes list")
+
+You can run the probes on all available [ollama models](https://ollama.com/library), as long as your hardware can run the model *(you first need to make sure the model you wish to probe is running inside the **ollama** container)*.
+
+With Microsoft's `Phi-3-Mini` model running inside the **ollama** container, we can, for example, run `dan.DAN_Jailbreak` probe on the Phi-3-Mini model with the command:
+
+```console
+  python3 -m garak --config garak_misc/garak_config.yaml --model_type ollama --model_name phi3 --probes dan.DAN_Jailbreak
+```
+
+The command above first configures garak to probe an ollama model running at *ht<span>tp://ollama:11434* with the *garak_misc/garak_config.yaml* file through the `--config` flag. Then the command instructs garak that the model is an *ollama* model with the `--model_type` flag, and that the model being probed is labeled *phi3* with the `--model_name` flag. And finally, `--probes` flag let's us list all the probes that will be ran on the model. 
+
+After garak has ran its probe(s), it will generate reports into `garak_runs` directory. 
+You can copy the reports to your local host machine and explore the report files. The `html` file contains a summary of the results and the `json` files contain chat logs:
+  - The directory currently needs root permissions to access, so let's change that with:
+    ```console
+    chmod -R a+rwX /root/.local/share/garak/garak_runs
+    ```
+  - Exit the container with command `exit` or by pressing `Ctrl + D`
+  - Run the following command to copy the report files to your local machine into a directory labeled "garak_runs":
+  ```console
+  docker cp llm_hackathon:/root/.local/share/garak/garak_runs garak_runs
+```
+  - Explore the report files:
+
+![garak report snippet](/assets/img/garak_report.PNG "garak report snippet")
+
+<br> 
+
+
+> *Note: 
+> - Try out at least 3 different probes on the Phi-3 model and examine the generated reports *(or as many as you have time to, if the probing takes a considerable amout of time - the speed at which the probes run depend on the hardware available for running the language model)*.
+> - If there's downtime when garak is running it's probes, you can already try the [Gandalf game](https://gandalf.lakera.ai/baseline)
+>  - After you feel like you know enough about garak, move on to trying to beat [Gandalf](https://gandalf.lakera.ai/baseline)
 
 <br>
 <br><br>
 
-### The rest of the README is instructions for setting up the environment, and operating DependencyCheck and Giskard tools (and garak when it is no longer bugged).
+### The rest of the README is instructions for setting up the environment, and operating DependencyCheck, Giskard, and garak tools.
 <br><br><br><br>
 
 ## <p align="center">Table of Contents</p>
@@ -377,6 +442,7 @@ The **llm_hackathon** container includes [Garak](https://docs.garak.ai/garak) an
 ### <ins>Garak</ins> <a name="garak"></a>
 
 If you aren't already attached to the **llm_hackathon** container's shell, do so with the command:
+
 ```console
   docker exec -ti llm_hackathon /bin/bash
 ```
@@ -389,7 +455,7 @@ You should see an output such as in the image below:
 
 ![garak probes list](/assets/img/garak_probes.PNG "garak probes list")
 
-You can run the probes on all available models in [Hugging Face Models](https://huggingface.co/models) (some require authentication and more computation power than others). 
+<!---You can run the probes on all available models in [Hugging Face Models](https://huggingface.co/models) (some require authentication and more computation power than others). 
 
 Hugging Face API has rate limits, so in order to run garak probes on certain Hugging Face models, we need to set a personal User Access Token as an environment variable. If you don't already have a Hugging Face User Access Token, you can create one [here](https://huggingface.co/settings/tokens) after you have created an account and are logged in to the [Hugging Face](https://huggingface.co/) web platform. The User Accesss Token needs to have "Read" privileges (see image below).
 
@@ -400,10 +466,23 @@ Set your personal User Access Token as an environment variable with:
   export HF_INFERENCE_TOKEN=REPLACE_THIS_WITH_YOUR_TOKEN
 ```
 
+
+
 Now we can, for example, run `malwaregen.Evasion` probe on Microsoft's `Phi-3-Mini` model with the command:
 ```console
   python3 -m garak --model_type huggingface.InferenceAPI --model_name microsoft/Phi-3-mini-4k-instruct --probes malwaregen.Evasion
 ```
+-->
+
+You can run the probes on all available [ollama models](https://ollama.com/library), as long as your hardware can run the model *(the model must be running inside the **ollama** container)*.
+
+With Microsoft's `Phi-3-Mini` model running inside the **ollama** container, we can, for example, run `dan.DAN_Jailbreak` probe on the Phi-3-Mini model with the command:
+
+```console
+  python3 -m garak --config garak_misc/garak_config.yaml --model_type ollama --model_name phi3 --probes dan.DAN_Jailbreak
+```
+
+The command above first configures garak to probe an ollama model running at http://ollama:11434 with the garak_misc/garak_config.yaml file through the `--config` flag. The the command instructs garak, that the model is an ollama model with the `--model_type` flag, and that the model being probed is labeled phi3 with the `--model_name` flag. And finally, `--probes` flag let's us list all the probes that will be ran on the model. 
 
 After garak has ran its probe(s), it will generate reports into `garak_runs` directory. 
 You can copy the reports to your local host machine and explore the report files. The `html` file contains a summary of the results and the `json` files contain chat logs:
