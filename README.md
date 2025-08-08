@@ -12,13 +12,16 @@
 # <p align="center">Instructions for those using a computer in the computer rooms:</p> <a name="computer-room"></a>
 - Log into one of the computers and open terminal
 - Make sure Docker is installed with the command `docker -v` *(should output the installed version number)*. If Docker is not installed, try a different computer.
-- Navigate to the `LLM-Hackathon` directory within the terminal (should be installed *somewhere* on the computer).
+- Navigate to the `LLM-Hackathon` directory within the terminal *(should be installed into `C:\MyTemp\LLM-Hackathon` directory)*.
 
-- See installed Docker containers with the command:
+- Build the Docker environment with:
 ```console
-  docker ps -a
+  docker compose up -d
 ``` 
-- There should be **two** available containers named: **ollama** and **llm_hackathon**
+> [!NOTE]
+> - Building the Docker environment may take a while depending on the available internet bandwidth (if everyone is setting up the environment at the same time, it **may** clog up the bandwidth, leading into crashed installations. If this happens, just continue the build with the command `docker compose up -d`). 
+> - You can already play [the Gandalf game](https://gandalf.lakera.ai/baseline) while Docker is building the environment, if the installation is taking a long time.
+- After the build is finished, there should be **two** available containers named: **ollama** and **llm_hackathon** *(You can see all containers with the command: `docker ps -a`)*
 - Start both of the containers with the command:
 ```console
   docker container start ollama llm_hackathon
