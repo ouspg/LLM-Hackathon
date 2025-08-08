@@ -5,7 +5,7 @@
 ### If you are reading this while participating in the CYB3 AI Vulnerability Workshop, follow these instructions for using garak:
 
 - [Instructions for those using a computer in the computer rooms](#computer-room)
-- [Instruction for those using their own laptop](#own-laptop)
+- [Instructions for those using their own laptop](#own-laptop)
 
 <br><br><br>
 
